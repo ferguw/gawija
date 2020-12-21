@@ -3,8 +3,12 @@
 
 <head>
   <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="Gawija, Platform Agency Online">
+  <meta name="keywords" content="Gawija, Agency, Talent, Client, Event Organizer, Banjarmasin, EO, SPG">
+  <meta name="author" content="Borneo Media Teknologi">
 
   <!-- Bootstrap CSS -->
 
@@ -16,7 +20,7 @@
   <!-- ICON -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../assets/external-assets/css/pages/icon.css">
-  <title>Talent | Digawiai</title>
+  <title>Talent | Gawija</title>
 </head>
 
 <body>
@@ -26,6 +30,11 @@
       <!-- Begin::SideBar -->
       <div class="col-lg-1" id="sidebar">
         <!-- Begin::Logo -->
+        <div class="row mobile">
+          <div class="col-12 close-sidebar text-right">
+            <a href="#!" class="material-icons" onclick="sidebar_close()">close</a>
+          </div>
+        </div>
         <div class="row">
           <div class="col-12 text-center d-logo">
             <img src="../assets/images/icon/logo/digawai-logo.png" class="logo" alt="logo" width="100%">
@@ -48,10 +57,10 @@
       <!-- Begin::Content -->
       <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-11" id="content">
         <!-- Begin::header-menu -->
-        <div class="row sticky-top header">
+        <div class="row header">
           <div class="col-lg-12">
             <div class="row">
-              <div class="col-sm-12 nav-mobile">
+              <div class="col-sm-12 nav-mobile" id="menu-top-mobile">
                 <div class="row align-items-center">
                   <div class="col-10">
                     <div class="row align-items-center justify-content-start">
@@ -82,7 +91,7 @@
               <div class="col-sm-12 col-md-12 col-lg-9 bottom-menu fixed-bottom">
                 <div class="row">
                   <div class="col-3">
-                    <a href="#!" class="material-icons icon-menu">home</a>
+                    <a href="#!" class="material-icons icon-menu active">home</a>
                   </div>
                   <div class="col-3">
                     <a href="#!" class="material-icons icon-menu">work</a>
@@ -132,17 +141,227 @@
             <!-- Banner -->
             <!-- div::content -->
             <div class="row d-content">
+              <!-- Begin::Card -->
               <div class="col-lg-12 page-content">
-                <!-- .... -->
+                <h3>Tawaran Project dari Klien yang Tertarik Dengan Anda</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error vero sit deleniti aspernatur eaque
+                  unde, accusantium obcaecati alias sunt veritatis minus odit nostrum, excepturi aperiam velit corporis,
+                  totam laboriosam ut.
+                </p>
+                <!-- Card-Begin::Content -->
+                <div class="row">
+                  <div class="col-12 card-content">
+                    <div class="row align-items-center">
+                      <div class="col-3 col-lg-1">
+                        <div class="img-profil">
+                          <a href="#!" onclick="sidebar()"><img src="../assets/images/avatar/avatar-1.png"
+                              alt="avatar-user" width="100%"></a>
+                        </div>
+                      </div>
+                      <div class="col-9 col-lg-11">
+                        <h4>PT. Lipsum</h4>
+                        <span>Slogan Perushaan</span>
+                        <hr>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-lg-11 offset-lg-1">
+                        <p>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro doloribus velit quidem maiores
+                          nesciunt aliquam nihil explicabo fugiat distinctio doloremque ab molestiae libero, minima et
+                          voluptatum molestias ipsam illo vel?
+                        </p>
+                        <hr>
+                      </div>
+                    </div>
+                    <div class="row align-items-center justify-content-center">
+                      <div class="col-12 col-lg-4 text-center">
+                        <h5>Start Project</h5>
+                        <span>Monday, 21 December 2020</span>
+                        <br>&nbsp;
+                        <h5>End Project</h5>
+                        <span>Monday, 28 December 2020</span>
+                      </div>
+                      <div class="col-lg-4 offset-lg-4 text-center mt-3">
+                        <a href="#!" class="btn btn-b1">Detail...</a>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- Card-End::Content -->
+                <hr>
+                <!-- Card-Begin::Content -->
+                <div class="row">
+                  <div class="col-12 card-content">
+                    <div class="row align-items-center">
+                      <div class="col-3 col-lg-1">
+                        <div class="img-profil">
+                          <a href="#!" onclick="sidebar()"><img src="../assets/images/avatar/avatar-1.png"
+                              alt="avatar-user" width="100%"></a>
+                        </div>
+                      </div>
+                      <div class="col-9 col-lg-11">
+                        <h4>PT. Lipsum</h4>
+                        <span>Slogan Perushaan</span>
+                        <hr>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-lg-11 offset-lg-1">
+                        <p>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro doloribus velit quidem maiores
+                          nesciunt aliquam nihil explicabo fugiat distinctio doloremque ab molestiae libero, minima et
+                          voluptatum molestias ipsam illo vel?
+                        </p>
+                        <hr>
+                      </div>
+                    </div>
+                    <div class="row align-items-center justify-content-center">
+                      <div class="col-12 col-lg-4 text-center">
+                        <h5>Start Project</h5>
+                        <span>Monday, 21 December 2020</span>
+                        <br>&nbsp;
+                        <h5>End Project</h5>
+                        <span>Monday, 28 December 2020</span>
+                      </div>
+                      <div class="col-lg-4 offset-lg-4 text-center mt-3">
+                        <a href="#!" class="btn btn-b1">Detail...</a>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- Card-End::Content -->
+                <hr>
+                <!-- Navigasi Detail -->
+                <div class="row justify-content-center">
+                  <div class="col-lg-3 text-center">
+                    <a href="#!" class="btn btn-b2">Load More...</a>
+                  </div>
+                </div>
+                <!-- Navigasi Detail -->
               </div>
+
+              <!-- End::Card -->
             </div>
             <!-- div::content -->
+            <!-- div::content -->
+            <div class="row d-content">
+              <!-- Begin::Card -->
+              <div class="col-lg-12 page-content">
+                <h3>Ajukan Dirimu Sebagai Talent</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error vero sit deleniti aspernatur eaque
+                  unde, accusantium obcaecati alias sunt veritatis minus odit nostrum, excepturi aperiam velit corporis,
+                  totam laboriosam ut.
+                </p>
+                <!-- Card-Begin::Content -->
+                <div class="row">
+                  <div class="col-12 card-content">
+                    <div class="row align-items-center">
+                      <div class="col-3 col-lg-1">
+                        <div class="img-profil">
+                          <a href="#!" onclick="sidebar()"><img src="../assets/images/avatar/avatar-1.png"
+                              alt="avatar-user" width="100%"></a>
+                        </div>
+                      </div>
+                      <div class="col-9 col-lg-11">
+                        <h4>PT. Lipsum</h4>
+                        <span>Slogan Perushaan</span>
+                        <hr>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-lg-11 offset-lg-1">
+                        <p>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro doloribus velit quidem maiores
+                          nesciunt aliquam nihil explicabo fugiat distinctio doloremque ab molestiae libero, minima et
+                          voluptatum molestias ipsam illo vel?
+                        </p>
+                        <hr>
+                      </div>
+                    </div>
+                    <div class="row align-items-center justify-content-center">
+                      <div class="col-12 col-lg-4 text-center">
+                        <h5>Start Project</h5>
+                        <span>Monday, 21 December 2020</span>
+                        <br>&nbsp;
+                        <h5>End Project</h5>
+                        <span>Monday, 28 December 2020</span>
+                      </div>
+                      <div class="col-lg-4 offset-lg-4 text-center mt-3">
+                        <a href="#!" class="btn btn-b1">Detail...</a>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- Card-End::Content -->
+                <hr>
+                <!-- Card-Begin::Content -->
+                <div class="row">
+                  <div class="col-12 card-content">
+                    <div class="row align-items-center">
+                      <div class="col-3 col-lg-1">
+                        <div class="img-profil">
+                          <a href="#!" onclick="sidebar()"><img src="../assets/images/avatar/avatar-1.png"
+                              alt="avatar-user" width="100%"></a>
+                        </div>
+                      </div>
+                      <div class="col-9 col-lg-11">
+                        <h4>PT. Lipsum</h4>
+                        <span>Slogan Perushaan</span>
+                        <hr>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-lg-11 offset-lg-1">
+                        <p>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro doloribus velit quidem maiores
+                          nesciunt aliquam nihil explicabo fugiat distinctio doloremque ab molestiae libero, minima et
+                          voluptatum molestias ipsam illo vel?
+                        </p>
+                        <hr>
+                      </div>
+                    </div>
+                    <div class="row align-items-center justify-content-center">
+                      <div class="col-12 col-lg-4 text-center">
+                        <h5>Start Project</h5>
+                        <span>Monday, 21 December 2020</span>
+                        <br>&nbsp;
+                        <h5>End Project</h5>
+                        <span>Monday, 28 December 2020</span>
+                      </div>
+                      <div class="col-lg-4 offset-lg-4 text-center mt-3">
+                        <a href="#!" class="btn btn-b1">Detail...</a>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- Card-End::Content -->
+                <hr>
+                <!-- Navigasi Detail -->
+                <div class="row justify-content-center">
+                  <div class="col-lg-3 text-center">
+                    <a href="#!" class="btn btn-b2">Load More...</a>
+                  </div>
+                </div>
+                <!-- Navigasi Detail -->
+              </div>
+
+              <!-- End::Card -->
+            </div>
+            <!-- div::content -->
+
           </div>
           <!-- End::Content -->
           <!-- Begin::QuickAccses -->
           <div class="col-lg-3">
             <!-- Info -->
-            <div class="row d-info">
+            <div class="row d-info sticky-top">
               <div class="col-lg-12 card-info">
                 <h6>Saldo</h6>
                 <h5>Rpxxx.xxxx</h5>
@@ -154,7 +373,7 @@
             </div>
             <!-- Info -->
             <!-- History -->
-            <div class="row d-history">
+            <!-- <div class="row d-history">
               <div class="col-lg-12 card-history">
                 <h6>History</h6>
                 <ul>
@@ -163,7 +382,7 @@
                   <li>List Nama Project</li>
                 </ul>
               </div>
-            </div>
+            </div> -->
             <!-- History -->
           </div>
           <!-- End::QuickAccses -->
@@ -196,15 +415,27 @@
       element.classList.add("active");
     }
 
+    function sidebar_close() {
+      var element = document.getElementById("sidebar");
+      element.classList.remove("active");
+    }
+
     // Scroll
-     $(window).on("scroll", function () {
-        if ($(window).scrollTop() !=0 ) {
-            $(".nav-mobile").addClass("scroll");
-        } else {
-            $(".nav-mobile").removeClass("scroll");
-        }
-      });
-      
+    $(window).on("scroll", function () {
+      if ($(window).scrollTop() != 0) {
+        $("#menu-top-mobile").addClass("scroll");
+      } else {
+        $("#menu-top-mobile").removeClass("scroll");
+      }
+    });
+
+    // Sidebar Scroll
+    $(window).on("scroll", function () {
+      if ($(window).scrollTop() != 0) {
+        $("#sidebar").removeClass("active");
+      }
+    });
+
   </script>
 </body>
 

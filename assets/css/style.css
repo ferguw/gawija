@@ -1,7 +1,13 @@
 /* CSS */
-body {
-    background: whitesmoke
+html {
+    height: 100%;
 }
+body {
+    height: 100%;
+    background-color: whitesmoke;
+    margin: 0px;
+}
+
 
 #sidebar {
     padding: 0px !important;
@@ -221,9 +227,15 @@ body {
 
 .page-content {
     background-color: whitesmoke;
-    height: 60vh;
+    /* height: 60vh; */
+    padding: 30px;
     border-radius: 20px;
     box-shadow: 1px 1px 16px #7777;
+}
+
+.card-content{
+    /* background-color: #0f0e47; */
+    padding: 10px;
 }
 
 /* Content */
@@ -258,6 +270,40 @@ body {
     /* width: 10px; */
 }
 
+/* BUtton */
+.btn-b1{
+    background-color: #0f0e47;
+    width: 70%;
+    color: whitesmoke;
+    border-radius: 15px;
+    transition: 0.7s;
+}
+.btn-b1:hover{
+    transition: 0.7s;
+    background-color: #101038;
+    color: white;
+}
+.btn-b2{
+    background-color: #ec5700;
+    width: 100%;
+    color: whitesmoke;
+    border-radius: 15px;
+    transition: 0.7s;
+}
+.btn-b2:hover{
+    transition: 0.7s;
+    background-color: #be4600;
+    color: white;
+}
+
+/* Class Reponsive */
+.desktop{
+    display: inline;
+}
+.mobile{
+    display: none;
+}
+
 /* Quick Info */
 
 /* ----------------------------------------------------------------------------------------------------------------------------- */
@@ -277,10 +323,18 @@ body {
 @media screen and (max-width:1229px) {
 
     /* Begin::Mobile */
+    /* Class Reponsive */
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: inline;
+    }
     #sidebar {
         position: absolute;
         top: -100vh;
         transition: 0.7s;
+        z-index: 1031;
     }
 
     #sidebar.active {
@@ -324,6 +378,16 @@ body {
         box-shadow: 1px 1px 16px #7777;
     }
 
+    .bottom-menu a.active{
+        background-color: #ec5700;
+        padding: 10px !important;
+        color: #fff;
+        font-size: 24px;
+        text-decoration: none;
+        transition: 0.7s;
+        border-radius: 10px;
+    }
+
     .d-diri {
         display: none;
     }
@@ -337,8 +401,11 @@ body {
     
     .nav-mobile.scroll {
         display: inline;
-        padding: 20px;
         background-color: #0f0e47;
+        color: white;
+    }
+    
+    .nav-mobile.scroll a{
         color: white;
     }
 
@@ -355,6 +422,21 @@ body {
     #username a {
         color: #0f0e47;
         text-decoration: none;
+    }
+
+    /* sidebar close btn */
+    .close-sidebar{
+        top: 0px;
+        position: absolute; 
+        z-index: 1032;
+    }
+    .close-sidebar a{
+        color: whitesmoke; 
+        padding: 40px 10px;
+    }
+
+    .jarak-bottom-menu{
+        margin-bottom: 10vh;
     }
 }
 
