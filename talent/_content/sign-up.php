@@ -2,8 +2,8 @@
     <div class="row page-login align-items-center">
         <div class="col-12 col-sm-12 col-md-12 col-lg-7 img-login text-center">
             <img src="../assets/images/bg/svg/daftar.svg" alt="login-bg" width="80%">
-            <h2 class="text-left">Rekrut Freelancer terbaik untuk Pekerjaan apa saja, Online</h2>
-            <p class="text-left">Jutaan orang menggunakan gawija.com untuk mewujudkan ide mereka menjadi kenyataan </p>
+            <h2 class=" mt-5">Rekrut Freelancer terbaik untuk Pekerjaan apa saja, Online</h2>
+            <p class="">Jutaan orang menggunakan gawija.com untuk mewujudkan ide mereka menjadi kenyataan </p>
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-5 div-form-login">
             <div class="row">
