@@ -7,12 +7,12 @@
 ?>
 <!doctype html>
 <html lang="en">
-<!-- Head -->
-<?php require_once("_body/head.php")?> <!-- Memanggil Tag Head -->
-<!-- Head -->
-
-<body>
-
+  <!-- Head -->
+  <?php require_once("_body/head.php")?> <!-- Memanggil Tag Head -->
+  <!-- Head -->
+  
+  <body>
+  <?php if (!isset($_SESSION['id_talent'])) { require_once("_content/login.php"); }else{ ?> <!-- Jika Tidak Login, Tampilkan Login, Jika False, Tampilkan Beranda -->
   <div class="container-fluid">
     <div class="row">
       <!-- Begin::SideBar -->
@@ -58,12 +58,12 @@
       <!-- End::Content -->
     </div>
   </div>
-
-
-
+  
+  
   <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
   <?php require_once("_body/footer.php")?>
-
+  
+<?php } ?> <!-- tutup kondisi IF Login -->
 </body>
 
 </html>

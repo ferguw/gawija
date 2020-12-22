@@ -93,16 +93,25 @@
 }
 /* Footer */
 
+/* Login */
+.side-img-login{
+  background-color: yellow;
+  padding: 60px !important;
+}
+/* Login */
+
 /* ======================================================== */
 /* ============ Tampilan Responsive ======================== */
 @media screen and (min-width:992px) {
 
   /*tampilan dekstop*/
 
+}
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
+  
   /*tampilan tablet*/
-
+  
+}
 @media screen and (max-width:768px) {
 
   /*tampilan smartphone*/

@@ -6,6 +6,7 @@ body {
     height: 100%;
     background-color: whitesmoke;
     margin: 0px;
+    overflow: hidden;
 }
 
 
@@ -304,6 +305,29 @@ body {
     display: none;
 }
 
+/* login */
+.img-login{
+    padding: 40px;
+}
+/* login */
+.page-login{
+    height: 100vh;
+    background-color: white;
+}
+.ket-form{
+    margin-bottom: 50px;
+}
+.page-login .div-form-login{
+    padding: 70px;
+}
+
+.div-form-login .card-login{
+    background-color: white;
+    height: 80vh;
+    padding: 60px;
+    box-shadow: 1px 1px 14px #777;
+    border-radius: 20px;
+}
 /* Quick Info */
 
 /* ----------------------------------------------------------------------------------------------------------------------------- */
@@ -324,6 +348,9 @@ body {
 
     /* Begin::Mobile */
     /* Class Reponsive */
+    body{
+        overflow: scroll;
+    }
     .desktop{
         display: none;
     }
@@ -438,6 +465,23 @@ body {
     .jarak-bottom-menu{
         margin-bottom: 10vh;
     }
+
+    /* login */
+    .page-login{
+        height: 100%;
+
+    }
+    .page-login .div-form-login{
+        padding: 20px;
+    }
+    
+    .div-form-login .card-login{
+        height: 95vh;
+        padding: 50px 10px;
+        box-shadow: none;
+        border-radius: 0px;
+    }
+    
 }
 
 /* END RESPONSIF */
