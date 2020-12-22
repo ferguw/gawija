@@ -34,3 +34,7 @@
         </div>
     </div>
 </div>
+<?php
+    // session_start();
+    $_SESSION['id_talent'] = 1;
+?>

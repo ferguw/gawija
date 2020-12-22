@@ -1,7 +1,12 @@
 <?php
     session_start();
-    // $_SESSION['id_talent'] = 1;
-    session_destroy();
+    if (isset($_GET['act'])) {
+      if ($_GET['act'] == 'logout') {
+        session_destroy();
+        header("location:index");
+      }
+    }
+
     if (!isset($_GET['p'])) {
         $p = 'home';
     }else{
@@ -13,6 +18,8 @@
     }else{
       $log = 'sign-in';
     }
+
+    
 ?>
 <!doctype html>
 <html lang="en">

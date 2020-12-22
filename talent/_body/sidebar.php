@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="row logout">
-        <div class="col-12 text-center"><a href="#!">Logout</a></div>
+        <div class="col-12 text-center"><a href="?act=logout">Logout</a></div>
     </div>
     <!-- End::Logo -->
 </div>
