@@ -1,4 +1,7 @@
 <?php
+    session_start();
+    // $_SESSION['id_talent'] = 1;
+    session_destroy();
     if (!isset($_GET['p'])) {
         $p = 'home';
     }else{
