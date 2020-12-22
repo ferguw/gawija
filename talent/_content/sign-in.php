@@ -1,3 +1,9 @@
+<?php
+    if (isset($_POST["login"])) {
+        $_SESSION["id_talent"] = 1; //Contoh
+        header("Location:index");
+    }
+?>
 <div class="container-fluid">
     <div class="row page-login align-items-center">
         <div class="col-12 col-sm-12 col-md-12 col-lg-7 img-login text-center">
@@ -12,7 +18,7 @@
                         <img src="../assets/images/icon/logo/gawija logo.svg" alt="logo" width="20%">
                         <h3 class="mt-3">Sign In</h3>
                     </div>
-                    <form>
+                    <form action="" method="POST">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="exampleInputEmail1"
@@ -27,14 +33,10 @@
                             <label class="form-check-label" for="exampleCheck1">Remember Me!</label>
                         </div>
                         <small>Don't have <a href="?log=sign-up">Account</a></small>
-                        <button type="submit" class="btn btn-b2 mt-4">Submit</button>
+                        <button type="submit" class="btn btn-b2 mt-4" name="login">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<?php
-    // session_start();
-    $_SESSION['id_talent'] = 1;
-?>
