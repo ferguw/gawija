@@ -25,7 +25,7 @@
                 </div>
               </div>
               <div class="col-sm-12 col-md-12 col-lg-9 top-menu">
-                <a href="#!"><span class="ket-menu">HOME</span></a>
+                <a href="?p=home"><span class="ket-menu">HOME</span></a>
                 <a href="#!"><span class="ket-menu">MY PROJECT</span></a>
                 <a href="#!"><span class="ket-menu">MESSAGE</span></a>
                 <a href="#!"><span class="ket-menu">UPDATE</span></a>
