@@ -4,6 +4,12 @@
     }else{
         $p = $_GET['p'];
     }
+
+    if (isset($_GET['log'])) {
+      $log = $_GET['log'];
+    }else{
+      $log = 'sign-in';
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,7 +18,7 @@
   <!-- Head -->
   
   <body>
-  <?php if (!isset($_SESSION['id_talent'])) { require_once("_content/login.php"); }else{ ?> <!-- Jika Tidak Login, Tampilkan Login, Jika False, Tampilkan Beranda -->
+  <?php if (!isset($_SESSION['id_talent'])) { require_once("_content/$log.php"); }else{ ?> <!-- Jika Tidak Login, Tampilkan Login, Jika False, Tampilkan Beranda -->
   <div class="container-fluid">
     <div class="row">
       <!-- Begin::SideBar -->
