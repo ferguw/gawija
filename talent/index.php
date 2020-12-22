@@ -1,5 +1,9 @@
 <?php
     session_start();
+
+    //Database
+    $con = mysqli_connect("localhost",  "root", "", "gawija");
+
     if (isset($_GET['act'])) {
       if ($_GET['act'] == 'logout') {
         session_destroy();
@@ -18,7 +22,7 @@
     }else{
       $log = 'sign-in';
     }
-
+    
     
 ?>
 <!doctype html>

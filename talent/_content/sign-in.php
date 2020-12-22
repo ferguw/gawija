@@ -1,9 +1,23 @@
 <?php
     if (isset($_POST["login"])) {
-        $_SESSION["id_talent"] = 1; //Contoh
-        header("Location:index");
+        // $_SESSION["id_talent"] = 1; //Contoh
+        // header("Location:index");
+        $email = mysqli_real_escape_string($con, $_POST["email"]);
+        $password = mysqli_real_escape_string($con, $_POST["password"]);
+
+        $cek_user = mysqli_query($con, "SELECT * FROM talent WHERE email = '$email' ");
+        $data_user = mysqli_fetch_assoc($cek_user);
+        
+        if ($data_user['email'] === $email AND password_verify($password, $data_user['password'])) {
+            $_SESSION["id_talent"] = $data_user['idt'];
+            header("Location:index");
+        }else {
+            echo "<script>Swal.fire({icon: 'error',title: 'Oops...',text: 'Data yang anda masukkan tidak kami temukan'})</script>";
+        }
     }
 ?>
+
+
 <div class="container-fluid">
     <div class="row page-login align-items-center">
         <div class="col-12 col-sm-12 col-md-12 col-lg-7 img-login text-center">
@@ -21,12 +35,12 @@
                     <form action="" method="POST">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
+                            <input type="email" name="email" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                         </div>
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
