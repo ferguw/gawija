@@ -53,7 +53,6 @@
             <!-- Banner -->
             
             <!-- Panggil -->
-            <?= '<script>sidebar_move()</script>'; ?>
             <?php require("_content/$p.php"); ?> <!-- Memanggil Content -->
             <!-- Panggil -->
 

@@ -13,7 +13,8 @@
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="shortcut icon" href="../assets/images/icon/svg/icon-digawiai.svg" type="image/x-icon">
-
+  
+  <link rel="stylesheet" type="text/css" href="../assets/external-assets/vendors/sweetalert/sweetalert.css">
   <!-- ICON -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../assets/external-assets/css/pages/icon.css">
