@@ -26,7 +26,7 @@
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Remember Me!</label>
                         </div>
-                        <small>Don't have <a href="?log=sign-up">Account?</a></small>
+                        <small>Don't have <a href="?log=sign-up">Account</a></small>
                         <button type="submit" class="btn btn-b2 mt-4">Submit</button>
                     </form>
                 </div>
