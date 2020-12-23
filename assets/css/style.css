@@ -196,6 +196,26 @@ body {
     overflow: hidden;
 }
 
+.img-profil-mini {
+    background-image: url(../images/avatar/empty.jpg);
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: inline-block;
+
+}
+
+.talent-join{
+    /* padding-right: 40px; */
+    /* margin-bottom: 30px; */
+}
+
+.talent-join .img-profil-mini{
+    margin: 10px 0px;
+    float: right;
+}
+
 .img-logo {
     background-image: url(../images/avatar/empty.jpg);
     width: 80px;
@@ -282,6 +302,20 @@ body {
     transition: 0.7s;
     background-color: #101038;
     color: white;
+}
+.btn-b1-2{
+    background-color: whitesmoke;
+    width: 70%;
+    color: #0f0e47;
+    border-radius: 15px;
+    transition: 0.7s;
+    border: solid 2px #0f0e47;
+}
+.btn-b1-2:hover{
+    transition: 0.7s;
+    background-color: #101038;
+    color: white;
+    border: solid 2px #0f0e47;
 }
 .btn-b2{
     background-color: #ec5700;

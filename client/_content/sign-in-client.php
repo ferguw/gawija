@@ -1,25 +1,20 @@
 <?php
 error_reporting(0);
     if (isset($_POST["login"])) {
-        // $_SESSION["id_talent"] = 1; //Contoh
-        // header("Location:index");
         $email = mysqli_real_escape_string($con, $_POST["email"]);
         $password = mysqli_real_escape_string($con, $_POST["password"]);
 
-        $cek_user = mysqli_query($con, "SELECT * FROM talent WHERE email = '$email' ");
+        $cek_user = mysqli_query($con, "SELECT * FROM client WHERE email = '$email' ");
         $data_user = mysqli_fetch_assoc($cek_user);
         
         if ($data_user['email'] === $email AND password_verify($password, $data_user['password'])) {
-            $_SESSION["id_talent"] = $data_user['idt'];
+            $_SESSION["id_client"] = $data_user['idc'];
             header("Location:index");
         }else {
-            
             echo "<script>Swal.fire({icon: 'error',title: 'Oops...',text: 'Data yang anda masukkan tidak kami temukan'})</script>";
         }
     }
 ?>
-
-
 <div class="container-fluid">
     <div class="row page-login align-items-center">
         <div class="col-12 col-sm-12 col-md-12 col-lg-7 img-login text-center">

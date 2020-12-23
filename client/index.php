@@ -1,12 +1,11 @@
 <?php
 session_start();
-
 //Database
 $con = mysqli_connect("localhost",  "root", "", "gawija");
 
 if (isset($_GET['act'])) {
   if ($_GET['act'] == 'logout') {
-    session_destroy();
+    unset($_SESSION['id_client']);
     header("location:index");
   }
 }
@@ -33,7 +32,7 @@ if (isset($_GET['log'])) {
 <!-- Head -->
 
 <body>
-  <?php if (!isset($_SESSION['id_talent'])) {
+  <?php if (!isset($_SESSION['id_client'])) {
     require_once("_content/$log.php");
   } else { ?>
     <!-- Jika Tidak Login, Tampilkan Login, Jika False, Tampilkan Beranda -->

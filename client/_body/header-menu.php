@@ -1,6 +1,6 @@
 <!-- Begin::header-menu -->
 <?php
-$idt = $_SESSION["id_talent"];
+$idt = $_SESSION["id_client"];
 $data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE `idt` = '$idt' "))
 ?>
 <div class="row header">
