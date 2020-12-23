@@ -114,7 +114,7 @@ function sidebar_move(menu_link) { // Sidebar Ketika Berpindah Halaman
         linkDown.classList.add("menu-link");
         linkDown.classList.add("close-down");
     }else{
-        rusak()
+        // rusak()
     }
 }
 

@@ -19,10 +19,10 @@
 <script src="../assets/js/script.js"></script>
 <script>
 // Sidebar
-$(document).ready(function() {
-    var page = '<?=$p?>';
-    sidebar_move(page); // memanggil function untuk menggerakkan Sidebar
-});
+var page = '<?=$p?>';
+sidebar_move(page); // memanggil function untuk menggerakkan Sidebar
+// $(document).ready(function() {
+// });
 // successInput();
 
 </script>
