@@ -1,7 +1,18 @@
 <?php
-$idt  = $_SESSION["id_client"];
-$query_tawaran = mysqli_query($con, "SELECT * FROM tawaran WHERE `idt` = '$idt' LIMIT 2");
-$query_list_job = mysqli_query($con, "SELECT * FROM job WHERE `status` = 'accept' LIMIT 2");
+$cari_my_job = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc'  "));
+$my_list_job = mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc'");
+
+$idjob = $cari_my_job['idj'];
+$data_ajuan = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idjob'"));
+$id_talent_ajuan = $data_ajuan['idt'];
+
+$data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE `idt` = '$id_talent_ajuan'  "));
+
+$query_job_requirement = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idjob' ");
+
+
+
+
 ?>
 
 <!-- div::content -->
@@ -15,12 +26,6 @@ $query_list_job = mysqli_query($con, "SELECT * FROM job WHERE `status` = 'accept
             totam laboriosam ut.
         </p>
 
-        <?php
-        while ($data_tawaran = mysqli_fetch_assoc($query_tawaran)) :
-            $idj = $data_tawaran['idj'];
-            $data_tawaran_job = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM job WHERE idj = '$idj' "));
-        ?>
-
             <!-- Card-Begin::Content -->
             <div class="row">
                 <div class="col-12 card-content">
@@ -31,8 +36,8 @@ $query_list_job = mysqli_query($con, "SELECT * FROM job WHERE `status` = 'accept
                             </div>
                         </div>
                         <div class="col-9 col-lg-11">
-                            <h4><?php echo ucwords('Nama Talent'); ?></h4>
-                            <span><?php echo strtoupper('Type Talent'); ?></span>
+                            <h4><?= $data_talent['name'] ?></h4>
+                            <span><?= $data_talent['type']; ?></span>
                             <hr>
                         </div>
                     </div>
@@ -40,8 +45,14 @@ $query_list_job = mysqli_query($con, "SELECT * FROM job WHERE `status` = 'accept
                         <div class="col-12 col-lg-6 text-center">
                             <div class="row">
                                 <div class="col-12 col-lg-6">
-                                    <h5>Nama Project</h5>
-                                    <span>Requirement Job(SPG, SPB, etc)</span>
+                                    <h5><?= $cari_my_job['judul'] ?></h5>
+                                    <span>Requirement Job
+                                        <?php 
+                                            while ($data_job_requirement = mysqli_fetch_assoc($query_job_requirement)) {
+                                                echo ", " . $data_job_requirement['type'];   
+                                            }
+                                        ?>
+                                    </span>
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <h5>Dealine Pengumpulan Talent</h5>
@@ -58,7 +69,6 @@ $query_list_job = mysqli_query($con, "SELECT * FROM job WHERE `status` = 'accept
             </div>
             <!-- Card-End::Content -->
             <hr>
-        <?php endwhile; ?>
     </div>
 
     <!-- End::Card -->
@@ -75,7 +85,7 @@ $query_list_job = mysqli_query($con, "SELECT * FROM job WHERE `status` = 'accept
             totam laboriosam ut.
         </p>
         <?php
-        while ($data_list_job = mysqli_fetch_assoc($query_list_job)) :
+        while ($data_list_job = mysqli_fetch_assoc($my_list_job)) :
         ?>
             <!-- Card-Begin::Content -->
             <div class="row">

@@ -1,7 +1,7 @@
 <!-- Begin::header-menu -->
 <?php
-$idt = $_SESSION["id_client"];
-$data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE `idt` = '$idt' "))
+$idc = $_SESSION["id_client"];
+$data_client = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM client WHERE `idc` = '$idc' "))
 ?>
 <div class="row header">
   <div class="col-lg-12">
@@ -55,7 +55,7 @@ $data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE
           <div class="col-lg-12 text-right">
             <div class="row align-items-center justify-content-end">
               <div class="col-9 text-right">
-                <a href="?p=profil"><?php echo $data_talent['email']; ?></a>
+                <a href="?p=profil"><?php echo $data_client['email']; ?></a>
               </div>
               <div class="col-3 text-right">
                 <div class="img-profil">

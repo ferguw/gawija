@@ -55,7 +55,7 @@ if (isset($_GET['log'])) {
               <!-- Banner -->
               <div class="row d-banner align-items-center">
                 <div class="col-lg-12 top-banner align-self-center">
-                  <h1>Hallo <?php echo ucwords($data_talent['name']); ?></h1>
+                  <h1>Hallo <?php echo ucwords($data_client['name']); ?></h1>
                   <h3>Selamat Datang!</h3>
                 </div>
               </div>

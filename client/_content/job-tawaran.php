@@ -11,8 +11,7 @@
         </p>
 
         <?php
-        $idt = $_SESSION["id_talent"];
-        $query_tawaran = mysqli_query($con, "SELECT * FROM tawaran WHERE `idt` = '$idt' ");
+        $query_tawaran = mysqli_query($con, "SELECT * FROM tawaran WHERE `idt` = '$idc' ");
         while ($data_tawaran = mysqli_fetch_assoc($query_tawaran)) {
             $idj = $data_tawaran['idj'];
             $data_job = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM job WHERE `idj` = '$idj' "));
