@@ -12,6 +12,12 @@
 <?php 
     $query_list_job = mysqli_query($con, "SELECT * FROM job WHERE `status` = 'accept' ");
     while ($data_list_job = mysqli_fetch_assoc($query_list_job)) {
+
+    $tgl_start_list_job = date_create($data_list_job['start']); //Add in Variable Date Fom SQL
+    $tgl_start_list_job =  date_format($tgl_start_list_job, "l, d F Y"); // Custom Date And Add to New Variable
+
+    $tgl_end_list_job = date_create($data_list_job['end']); //Add in Variable Date Fom SQL
+    $tgl_end_list_job =  date_format($tgl_end_list_job, "l, d F Y"); // Custom Date And Add to New Variable
         
 ?>
         <!-- Card-Begin::Content -->
@@ -41,10 +47,10 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-12 col-lg-4 text-center">
                         <h5>Start Project</h5>
-                        <span>Monday, 21 December 2020</span>
+                        <span><?= $tgl_start_list_job ?></span>
                         <br>&nbsp;
                         <h5>End Project</h5>
-                        <span>Monday, 28 December 2020</span>
+                        <span><?= $tgl_end_list_job ?></span>
                     </div>
                     <div class="col-lg-4 offset-lg-4 text-center mt-3">
                         <a href="?p=job-list-view&id-job=<?=$data_list_job['idj']?>" class="btn btn-b1">Detail...</a>

@@ -3,6 +3,10 @@ $idj = $_GET["id-job"];
 
 //Mencari Job pada tabel job
 $data_job_search = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM job WHERE `idj` = '$idj' "));
+    $tgl_start_list_job = date_create($data_job_search['start']); //Add in Variable Date Fom SQL
+    $tgl_start_list_job =  date_format($tgl_start_list_job, "l, d F Y"); // Custom Date And Add to New Variable
+    $tgl_end_list_job = date_create($data_job_search['end']); //Add in Variable Date Fom SQL
+    $tgl_end_list_job =  date_format($tgl_end_list_job, "l, d F Y"); // Custom Date And Add to New Variable
 
 //mengambil data dri tabel job
 $id_client = $data_job_search['idc'];
@@ -80,11 +84,11 @@ if (isset($_POST['terima-pengajuan'])) {
                         <div class="row">
                             <div class="col-6">
                                 <h5>Start Project</h5>
-                                <span>Monday, 21 December 2020</span>
+                                <span><?= $tgl_start_list_job ?></span>
                             </div>
                             <div class="col-6">
                                 <h5>End Project</h5>
-                                <span>Monday, 28 December 2020</span>
+                                <span><?= $tgl_end_list_job ?></span>
                             </div>
                         </div>
                     </div>
