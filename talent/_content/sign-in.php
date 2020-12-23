@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
     if (isset($_POST["login"])) {
         // $_SESSION["id_talent"] = 1; //Contoh
         // header("Location:index");
@@ -12,6 +13,7 @@
             $_SESSION["id_talent"] = $data_user['idt'];
             header("Location:index");
         }else {
+            
             echo "<script>Swal.fire({icon: 'error',title: 'Oops...',text: 'Data yang anda masukkan tidak kami temukan'})</script>";
         }
     }
