@@ -1,8 +1,8 @@
-<!-- Begin::header-menu -->
 <?php
 $idt = $_SESSION["id_talent"];
-$data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE `idt` = '$idt' "))
+$data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE `idt` = '$idt' "));
 ?>
+<!-- Begin::header-menu -->
 <div class="row header">
   <div class="col-lg-12">
     <div class="row">
