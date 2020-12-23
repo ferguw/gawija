@@ -50,7 +50,7 @@
                             <span>Monday, 28 December 2020</span>
                         </div>
                         <div class="col-lg-4 offset-lg-4 text-center mt-3">
-                            <a href="#!" class="btn btn-b1">Detail...</a>
+                            <a href="?p=job-tawaran-view&id-job=<?=$data_job['idj']?>" class="btn btn-b1">Detail...</a>
                         </div>
                     </div>
 
