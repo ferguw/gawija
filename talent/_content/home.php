@@ -31,8 +31,8 @@ $query_list_job = mysqli_query($con, "SELECT * FROM job WHERE `status` = 'accept
                             </div>
                         </div>
                         <div class="col-9 col-lg-11">
-                            <h4><?php echo $data_tawaran_job['judul']; ?></h4>
-                            <span><?php echo $data_tawaran_job['comp']; ?></span>
+                            <h4><?php echo ucwords($data_tawaran_job['judul']); ?></h4>
+                            <span><?php echo strtoupper($data_tawaran_job['comp']); ?></span>
                             <hr>
                         </div>
                     </div>
@@ -97,8 +97,8 @@ $query_list_job = mysqli_query($con, "SELECT * FROM job WHERE `status` = 'accept
                             </div>
                         </div>
                         <div class="col-9 col-lg-11">
-                            <h4><?php echo $data_list_job['judul']; ?></h4>
-                            <span><?php echo $data_list_job['comp']; ?></span>
+                            <h4><?php echo ucwords($data_list_job['judul']); ?></h4>
+                            <span><?php echo strtoupper($data_list_job['comp']); ?></span>
                             <hr>
                         </div>
                     </div>

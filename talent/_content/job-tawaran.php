@@ -28,8 +28,8 @@
                             </div>
                         </div>
                         <div class="col-9 col-lg-11">
-                            <h4><?php echo $data_job['judul']; ?></h4>
-                            <span><?php echo $data_job['comp']; ?></span>
+                            <h4><?php echo ucwords($data_job['judul']); ?></h4>
+                            <span><?php echo strtoupper($data_job['comp']); ?></span>
                             <hr>
                         </div>
                     </div>
