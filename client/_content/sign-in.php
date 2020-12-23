@@ -56,7 +56,7 @@ error_reporting(0);
                         <button type="submit" class="btn btn-b2 mt-4" name="login">Submit</button>
                     </form>
                     <br>
-                    <small>Login as <a href="../client">Client</a></small>
+                    <small>Login as <a href="?log=sign-in-client">Client</a></small>
                 </div>
             </div>
         </div>

@@ -59,7 +59,7 @@ error_reporting(0);
                         </div>
                     </form>
                     <br>
-                    <small>Login as <a href="?log=sign-in">Talent</a></small>
+                    <small>Login as <a href="../talent">Talent</a></small>
                 </div>
             </div>
         </div>
