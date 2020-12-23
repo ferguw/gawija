@@ -44,7 +44,7 @@ $query_list_job = mysqli_query($con, "SELECT * FROM job WHERE `status` = 'accept
                                     <span>Requirement Job(SPG, SPB, etc)</span>
                                 </div>
                                 <div class="col-12 col-lg-6">
-                                    <h5>Dealine Pengumpulan Job</h5>
+                                    <h5>Dealine Pengumpulan Talent</h5>
                                     <span>Monday, 28 December 2020</span>
                                 </div>
                             </div>
