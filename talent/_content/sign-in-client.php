@@ -24,11 +24,11 @@ error_reporting(0);
     <div class="row page-login align-items-center">
         <div class="col-12 col-sm-12 col-md-12 col-lg-7 img-login text-center">
             <img src="../assets/images/bg/svg/login.svg" alt="login-bg" width="80%">
-            <h2 class=" mt-5">Jadi Freelancer yang terbaik untuk Pekerjaan apa saja, Online</h2>
+            <h2 class=" mt-5">Rekrut Freelancer yang terbaik untuk Pekerjaan apa saja, Online</h2>
             <p class="">Jutaan orang menggunakan Platform Gawija untuk mewujudkan Impian mereka menjadi kenyataan </p>
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-5 div-form-login">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-12 card-login">
                     <div class="ket-form text-center">
                         <center>
@@ -36,7 +36,7 @@ error_reporting(0);
                                 <img src="../assets/images/icon/logo/gawija logo.svg" alt="logo" width="100%">
                             </div>
                         </center>
-                        <h3 class="mt-3">Sign In Talent</h3>
+                        <h3 class="mt-3">Sign In Client</h3>
                     </div>
                     <form action="" method="POST">
                         <div class="form-group">
@@ -52,11 +52,14 @@ error_reporting(0);
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Remember Me!</label>
                         </div>
-                        <small>Don't have <a href="?log=sign-up">Account Talent?</a></small>
-                        <button type="submit" class="btn btn-b2 mt-4" name="login">Submit</button>
+                        <small>Don't have <a href="?log=sign-up-client">Account Client?</a></small>
+                        <br>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-b3 mt-4" name="login">Submit</button>
+                        </div>
                     </form>
                     <br>
-                    <small>Login as <a href="?log=sign-in-client">Client</a></small>
+                    <small>Login as <a href="?log=sign-in">Talent</a></small>
                 </div>
             </div>
         </div>
