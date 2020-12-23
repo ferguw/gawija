@@ -221,6 +221,13 @@ body {
     height: 80px;
     border-radius: 50px;
     overflow: hidden;
+    /* margin-top: 50px; */
+}
+.img-logo-template {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    overflow: hidden;
     margin-top: 50px;
     position: absolute;
     z-index: 2;
@@ -557,7 +564,7 @@ body {
         margin: 10px 0px;
     }
 
-    .img-logo {
+    .img-logo-template {
         width: 80px;
         height: 80px;
         border-radius: 50px;
