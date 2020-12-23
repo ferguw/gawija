@@ -8,8 +8,11 @@
     </div>
     <div class="row">
         <div class="col-12 text-center d-logo">
-            <a href="index"><img src="../assets/images/icon/logo/digawai-logo.png" class="logo" alt="logo"
-                    width="100%"></a>
+        <a href="index">
+            <div class="img-logo">
+                <img src="../assets/images/icon/logo/gawija logo.svg" class="logo" alt="logo" width="100%">
+            </div>
+        </a>
         </div>
     </div>
     <div class="row menu justify-content-end align-items-center">
