@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-12 text-center d-logo">
         <a href="index">
-            <div class="img-logo">
+            <div class="img-logo-template">
                 <img src="../assets/images/icon/logo/gawija logo.svg" class="logo" alt="logo" width="100%">
             </div>
         </a>
