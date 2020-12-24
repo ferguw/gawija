@@ -1,7 +1,8 @@
 <?php
 error_reporting(0);
     if (isset($_POST["login"])) {
-        $email = mysqli_real_escape_string($con, $_POST["email"]);
+        // $email = mysqli_real_escape_string($con, $_POST["email"]);
+        $email = $_POST['email'];
         $password = mysqli_real_escape_string($con, $_POST["password"]);
 
         $cek_user = mysqli_query($con, "SELECT * FROM client WHERE email = '$email' ");
