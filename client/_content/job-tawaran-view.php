@@ -11,7 +11,7 @@
                 <div class="row align-items-center">
                     <div class="col-3 col-lg-1">
                         <div class="img-profil">
-                            <a href="#!" onclick="sidebar()"><img src="../assets/images/avatar/avatar-1.png"
+                            <a href="#!"><img src="../assets/images/avatar/avatar-1.png"
                                     alt="avatar-user" width="100%"></a>
                         </div>
                     </div>

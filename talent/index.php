@@ -7,7 +7,7 @@ $con = mysqli_connect("localhost",  "root", "", "gawija");
 
 if (isset($_GET['act'])) {
   if ($_GET['act'] == 'logout') {
-    session_destroy();
+    unset($_SESSION['id_talent']);
     header("location:index");
   }
 }

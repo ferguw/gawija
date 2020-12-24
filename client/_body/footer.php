@@ -10,13 +10,17 @@
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<!-- Table -->
+
+<!-- Table -->
+
 <!-- Sweet Alert -->
 <script src="../assets/external-assets/vendors/sweetalert/sweetalert.min.js"></script>
 <script src="../assets/external-assets/js/scripts/extra-components-sweetalert.js"></script>
 <!-- Sweet Alert -->
 
 <!-- JS Lokal -->
-<script src="../assets/js/script.js"></script>
+<script src="../assets/js/script-client.js"></script>
 <script>
 // Sidebar
 var page = '<?=$p?>';

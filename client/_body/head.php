@@ -17,6 +17,10 @@
   <!-- ICON -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../assets/external-assets/css/pages/icon.css">
+
+
+
+  
   <title><?= ucwords($p) ?> | Gawija</title>
 
   <!-- Sweet Alert -->
