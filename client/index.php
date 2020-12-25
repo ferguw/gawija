@@ -54,7 +54,7 @@ if (isset($_GET['log'])) {
             <!-- Begin::Content -->
             <div class="col-lg-9 content-utama">
               <?php 
-                if ($_GET['p'] != 'job-add') {
+                if ($p != 'job-add') {
                   echo '<!-- Banner -->
                   <div class="row d-banner align-items-center">
                     <div class="col-lg-12 top-banner align-self-center">
@@ -81,7 +81,7 @@ if (isset($_GET['log'])) {
               <div class="row sticky-top">
                 <div class="col-12">
                 <?php 
-                if ($_GET['p'] != 'job-add') {
+                if ($p != 'job-add') {
                     require_once("_body/quick-info.php");
                 }else{
                   echo "&nbsp;";
