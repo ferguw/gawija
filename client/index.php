@@ -53,14 +53,20 @@ if (isset($_GET['log'])) {
           <div class="row">
             <!-- Begin::Content -->
             <div class="col-lg-9 content-utama">
-              <!-- Banner -->
-              <div class="row d-banner align-items-center">
-                <div class="col-lg-12 top-banner align-self-center">
-                  <h1>Hallo <?php echo ucwords($data_client['name']); ?></h1>
-                  <h3>Selamat Datang!</h3>
-                </div>
-              </div>
-              <!-- Banner -->
+              <?php 
+                if ($_GET['p'] != 'job-add') {
+                  echo '<!-- Banner -->
+                  <div class="row d-banner align-items-center">
+                    <div class="col-lg-12 top-banner align-self-center">
+                      <h1>Hallo <?php echo ucwords('.$data_client["name"].'); ?></h1>
+                      <h3>Selamat Datang!</h3>
+                    </div>
+                  </div>
+                  <!-- Banner -->';
+                }else{
+                  echo "&nbsp;";
+                }
+              ?>
 
               <!-- Panggil -->
               <?php require("_content/$p.php"); ?>
@@ -74,7 +80,13 @@ if (isset($_GET['log'])) {
             <div class="col-lg-3">
               <div class="row sticky-top">
                 <div class="col-12">
-                  <?php require_once("_body/quick-info.php"); ?>
+                <?php 
+                if ($_GET['p'] != 'job-add') {
+                    require_once("_body/quick-info.php");
+                }else{
+                  echo "&nbsp;";
+                }
+                ?>
                   <!-- Memanggil Quick Info -->
                 </div>
               </div>

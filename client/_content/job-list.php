@@ -18,6 +18,11 @@ $query_job_requirement = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` =
 <div class="row d-content">
     <!-- Begin::Card -->
     <div class="col-lg-12 page-content">
+            <div class="row">
+                <div class="col-6 col-lg-4 offset-lg-8">
+                    <a href="?p=job-add" class="btn btn-b1-2 material-icons">add</a>
+                </div>
+            </div>
         <h3 class="text-center">Project On Proggress</h3>
         <?php
         while ($data_list_job = mysqli_fetch_assoc($my_list_job)) :
