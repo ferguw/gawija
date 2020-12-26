@@ -16,7 +16,7 @@ $data_client = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM client WHERE
                 </div>
               </div>
               <div class="col-9 text-left" id="username">
-                <a href="?p=profil">barbara@mail.com</a>
+                <a href="?p=profil"><?php echo $data_client['email']; ?></a>
               </div>
             </div>
           </div>

@@ -52,21 +52,21 @@ if (isset($_GET['log'])) {
           <!-- Begin::isi -->
           <div class="row">
             <!-- Begin::Content -->
+            <!-- Banner -->
             <div class="col-lg-9 content-utama">
               <?php 
                 if ($p != 'job-add') {
-                  echo '<!-- Banner -->
-                  <div class="row d-banner align-items-center">
-                    <div class="col-lg-12 top-banner align-self-center">
-                      <h1>Hallo <?php echo ucwords('.$data_client["name"].'); ?></h1>
-                      <h3>Selamat Datang!</h3>
-                    </div>
-                  </div>
-                  <!-- Banner -->';
+                  echo '<div class="row d-banner align-items-center">
+                          <div class="col-lg-12 top-banner align-self-center">
+                            <h1>Hallo '.ucwords($data_client["name"]).'</h1>
+                            <h3>Selamat Datang!</h3>
+                          </div>
+                        </div>';
                 }else{
                   echo "&nbsp;";
                 }
               ?>
+              <!-- Banner -->'
 
               <!-- Panggil -->
               <?php require("_content/$p.php"); ?>
@@ -81,10 +81,14 @@ if (isset($_GET['log'])) {
               <div class="row sticky-top">
                 <div class="col-12">
                 <?php 
-                if ($p != 'job-add') {
-                    require_once("_body/quick-info.php");
-                }else{
+                if ($p == 'job-add') {
                   echo "&nbsp;";
+                }elseif ($p == 'job-list-view') {
+                  if (isset($_GET['idt'])) {
+                    require_once("_body/detail-talent.php");
+                  }
+                }else{
+                  require_once("_body/quick-info.php");
                 }
                 ?>
                   <!-- Memanggil Quick Info -->

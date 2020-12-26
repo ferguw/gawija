@@ -13,7 +13,7 @@ body {
 #sidebar {
     padding: 0px !important;
     color: white;
-    /* background-color: #0f0e47; */
+    /* background-color: #2F3363; */
     height: 100vh;
     overflow: hidden;
 }
@@ -25,28 +25,17 @@ body {
 }
 
 /* Sidebar */
-.logo {
-    /* margin-top: 50px;
-    position: absolute;
-    z-index: 2;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    padding: 0px 20px; */
-}
 
 .menu {
-    /* background-color: #0f0e47; */
+    /* background-color: #2F3363; */
     height: 90vh;
 }
-
-.mn {}
 
 .mn::before {
     content: '';
     width: 50px;
     height: 100vh;
-    background-color: #0f0e47;
+    background-color: #2F3363;
     position: absolute;
     z-index: -1;
 }
@@ -55,14 +44,14 @@ body {
     content: ' ';
     width: 100%;
     height: 100vh;
-    background-color: #0f0e47;
+    background-color: #2F3363;
     position: absolute;
     z-index: -1;
     right: 0px;
 }
 
 .menu-link {
-    background-color: #0f0e47;
+    background-color: #2F3363;
     padding: 13px 0px 13px 10px;
     width: 100%;
 }
@@ -70,7 +59,7 @@ body {
 .menu-link.active {
     z-index: 1;
     background-color: whitesmoke;
-    color: #0f0e47;
+    color: #2F3363;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
     transition: 1.6s;
@@ -79,7 +68,7 @@ body {
 }
 
 .menu-link::before {
-    background-color: #0f0e47;
+    background-color: #2F3363;
     width: 100%;
     height: 40vh;
     position: absolute;
@@ -108,12 +97,12 @@ body {
 }
 
 .menu-link.active a {
-    color: #0f0e47;
+    color: #2F3363;
 }
 
 .logout {
     height: 20vh;
-    background-color: #0f0e47;
+    background-color: #2F3363;
     padding: 0px;
 }
 
@@ -129,9 +118,6 @@ body {
 /* Sidebar */
 
 /* Top Menu */
-.header {
-    /* background-color: aqua; */
-}
 
 .top-menu {
     /* background-color: brown; */
@@ -142,7 +128,7 @@ body {
     margin: 0px 5px;
     background-color: whitesmoke;
     padding: 10px 40px;
-    color: #0f0e47;
+    color: #2F3363;
     font-size: 14px;
     text-decoration: none;
     transition: 0.7s;
@@ -151,7 +137,7 @@ body {
 
 .top-menu a:hover {
     padding: 10px 50px;
-    background-color: #0f0e47;
+    background-color: #2F3363;
     color: #fff;
     transition: 0.7s;
     border-radius: 10px;
@@ -170,6 +156,11 @@ body {
     display: none;
 }
 
+.material-icons.iconC{
+    padding: 0px !important;
+    position: relative;
+    top: 5px;
+}
 
 
 /* Nav Mobile */
@@ -180,12 +171,12 @@ body {
 /* Profil */
 .d-diri {
     padding: 20px;
-    /* background-color: #0f0e47; */
+    /* background-color: #2F3363; */
 }
 
 .d-diri a {
     text-decoration: none;
-    color: #0f0e47;
+    color: #2F3363;
 }
 
 .img-profil {
@@ -204,11 +195,6 @@ body {
     overflow: hidden;
     display: inline-block;
 
-}
-
-.talent-join{
-    /* padding-right: 40px; */
-    /* margin-bottom: 30px; */
 }
 
 .talent-join .img-profil-mini{
@@ -234,7 +220,6 @@ body {
     top: 0px;
     left: 50px;
     right: 0px;
-    box-shadow: 1px 1px 10px #fff;
 }
 /* Top Menu */
 
@@ -245,11 +230,12 @@ body {
 }
 
 .top-banner {
-    padding: 15px 25px;
+    padding: 40px 25px;
     color: #fff;
     overflow: hidden;
-    background-image: url(../images/gallery/banner-1.jpg);
+    background-image: url(../images/gallery/banner-2.png);
     background-size: cover;
+    background-position: center left;
     border-radius: 20px;
 }
 
@@ -264,10 +250,11 @@ body {
     padding: 30px;
     border-radius: 20px;
     box-shadow: 1px 1px 16px #7777;
+    margin-bottom: 40px;
 }
 
 .card-content{
-    /* background-color: #0f0e47; */
+    /* background-color: #2F3363; */
     padding: 10px;
 }
 
@@ -281,7 +268,7 @@ body {
 .card-info {
     color: #fff;
     padding: 20px 10px;
-    background-color: #0f0e47;
+    background-color: #2F3363;
     box-shadow: 1px 1px 16px #777;
     border-radius: 20px;
 }
@@ -305,7 +292,7 @@ body {
 
 /* BUtton */
 .btn-b1{
-    background-color: #0f0e47;
+    background-color: #2F3363;
     width: 70%;
     color: whitesmoke;
     border-radius: 15px;
@@ -319,17 +306,33 @@ body {
 .btn-b1-2{
     background-color: whitesmoke;
     width: 70%;
-    color: #0f0e47;
+    color: #2F3363;
     border-radius: 15px;
     transition: 0.7s;
-    border: solid 2px #0f0e47;
+    border: solid 2px #2F3363;
 }
 .btn-b1-2:hover{
     transition: 0.7s;
     background-color: #101038;
     color: white;
-    border: solid 2px #0f0e47;
+    border: solid 2px #2F3363;
 }
+
+.btn-b1-3{
+    background-color: whitesmoke;
+    width: 100%;
+    color: #2F3363;
+    border-radius: 15px;
+    transition: 0.7s;
+    border: solid 2px #2F3363;
+}
+.btn-b1-3:hover{
+    transition: 0.7s;
+    background-color: #2F3363;
+    color: white;
+    border: solid 2px #2F3363;
+}
+
 .btn-b2{
     background-color: #ec5700;
     width: 100%;
@@ -339,7 +342,7 @@ body {
 }
 .btn-b2:hover{
     transition: 0.7s;
-    background-color: #0f0e47;
+    background-color: #2F3363;
     color: white;
 }
 
@@ -354,10 +357,87 @@ body {
 .btn-b3:hover{
     transition: 0.7s;
     background-color: white;
+}
+
+.btn-b4{
+    width: 100%;
+    border-radius: 15px;
+    transition: 0.7s;
+}
+.btn-b4:hover{
+    transition: 0.7s;
+    background-color: white;
+}
+
+.btn-card{
+    width: 100%;
+    border-radius: 5px;
+    transition: 0.7s;
+}
+.btn-card:hover{
+    transition: 0.7s;
+    background-color: white;
+}
+
+.btnc-or{
+    background-color: #ec5700;
+    border: solid 2px #ec5700;
+    color: #ec5700;
+    transition: 0.7s;
+    color: whitesmoke;
+}
+.btnc-or:hover{
     border: solid 2px #ec5700;
     color: #ec5700;
 }
+.btnc-or-2{
+    background-color: whitesmoke;
+    border: solid 2px #ec5700;
+    color: #ec5700;
+    transition: 0.7s;
+    color:#ec5700;
+}
+.btnc-or-2:hover{
+    background-color: #ec5700;
+    border: solid 2px #ec5700;
+    color: whitesmoke;
+}
+.btnc-br{
+    background-color: #2F3363;
+    border: solid 2px #2F3363;
+    color: #2F3363;
+    transition: 0.7s;
+    color: whitesmoke;
+}
+.btnc-br:hover{
+    border: solid 2px #2F3363;
+    color: #2F3363;
+}
 
+.btnc-br-2{
+    background-color: whitesmoke;
+    border: solid 2px #2F3363;
+    color: #2F3363;
+    transition: 0.7s;
+    color:#2F3363;
+}
+.btnc-br-2:hover{
+    background-color: #2F3363;
+    border: solid 2px #2F3363;
+    color: whitesmoke;
+}
+
+.btnc-net{
+    background-color: #d5d9ff;
+    border: solid 2px #d5d9ff;
+    color: #101038;
+    transition: 0.7s;
+}
+.btnc-net:hover{
+    background-color: #d5d9ff;
+    border: solid 2px #d5d9ff;
+    color: #101038;
+}
 /* Class Reponsive */
 .desktop{
     display: inline;
@@ -404,6 +484,134 @@ body {
     margin: 10px 0px;
 }
 
+.img-list{
+    background-image: url(../images/avatar/empty.jpg);
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    overflow: hidden;
+}
+.d-img-list{
+    display: flex;
+    justify-content: center;
+}
+.d-img-list .img-list{
+   position: absolute;
+   top: 60px;
+   z-index: 2;
+}
+.d-img-list::before{
+    content: ' ';
+    background-color: #2F3363;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.d-img-list.high::before{
+    content: ' ';
+    background-color: #F47A43;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.card-list{
+    background-color: #ffff;
+    height: 300px;
+    box-shadow: 1px 1px 10px #7777;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.card-list .card-ket{
+    position: absolute;
+    top: 140px;
+}
+
+.card-list .card-bottom{
+    position: absolute;
+    top: 230px;
+    width: 100%;
+    padding: 0px 30px;
+}
+
+/* =================================== */
+/* info talent */
+.d-img-list-big{
+    display: flex;
+    justify-content: center;
+}
+.d-img-list-big .img-list-big{
+   position: absolute;
+   top: 70px;
+   z-index: 2;
+}
+.d-img-list-big::before{
+    content: ' ';
+    background-color: #2F3363;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.img-list-big{
+    background-image: url(../images/avatar/empty.jpg);
+    width: 270px;
+    height: 270px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.card-list-info{
+    background-color: #ffff;
+    height: 84vh;
+    box-shadow: 1px 1px 10px #7777;
+    border-radius: 20px;
+    overflow: scroll;
+}
+
+.card-list-info .body{
+    position: absolute;
+    top: 350px;
+    left: 0px;
+    background-color: white;
+    content: ' ';
+    width: 100%;
+    height: 50vh;
+}
+
+.card-list-info .body .data-diri{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card-list-info .body .data-diri{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-list-info .body .data-diri table{
+    width: 100%;
+}
+
+.card-list-info .body .data-diri table td{
+    padding: 10px 0px !important;
+}
+
+
 /* ----------------------------------------------------------------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------------------------------------------------------- */
@@ -449,21 +657,21 @@ body {
         /* background-color: brown; */
         display: none;
         padding: 15px 0px;
-        background-color: #0f0e47;
+        background-color: #2F3363;
         text-align: center;
     }
 
     .bottom-menu {
         display: inline;
         padding: 13px 10px;
-        background-color: #0f0e47;
+        background-color: #2F3363;
         text-align: center;
     }
 
     .bottom-menu a {
         background-color: whitesmoke;
         padding: 10px !important;
-        color: #0f0e47;
+        color: #2F3363;
         font-size: 24px;
         text-decoration: none;
         transition: 0.7s;
@@ -472,7 +680,7 @@ body {
 
     .bottom-menu a:hover {
         /* padding: 10px 50px; */
-        background-color: #0f0e47;
+        background-color: #2F3363;
         color: #fff;
         transition: 0.7s;
         border-radius: 10px;
@@ -497,12 +705,12 @@ body {
     .nav-mobile {
         display: inline;
         padding: 20px;
-        /* background-color: #0f0e47; */
+        /* background-color: #2F3363; */
     }
     
     .nav-mobile.scroll {
         display: inline;
-        background-color: #0f0e47;
+        background-color: #2F3363;
         color: white;
     }
     
@@ -512,7 +720,7 @@ body {
 
     .menu-sidebar {
         color: #fff;
-        background-color: #0f0e47;
+        background-color: #2F3363;
         border: none;
         padding: 5px;
         width: 35px;
@@ -521,7 +729,7 @@ body {
     }
 
     #username a {
-        color: #0f0e47;
+        color: #2F3363;
         text-decoration: none;
     }
 
