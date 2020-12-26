@@ -14,8 +14,29 @@
                 <label for="projN">Project Name</label>
                 <input type="text" placeholder="Project Name" oninput="this.className = ''" name="projN">
 
-                <label for="compN">Company Name</label>
-                <input type="text" placeholder="Company Name" oninput="this.className = ''" name="compN">
+                <label for="compN">Project Description</label>
+                <input type="text" placeholder="Description" oninput="this.className = ''" name="projD">
+
+                <label for="city">City</label>
+                <select class="custom-select mr-sm-2" name="city" id="inlineFormCustomSelect">
+                    <option selected disabled>Choose City...</option>
+                    <option value="Banjarmasin">Banjarmasin</option>
+                    <option value="Banjarbaru">Banjarbaru</option>
+                    <option value="Banjar">Banjar</option>
+                    <option value="Barito Kuala">Barito Kuala</option>
+                    <option value="Balangan">Balangan</option>
+                    <option value="Hulu Sungai Utara">Hulu Sungai Utara</option>
+                    <option value="Hulu Sungai Tengah">Hulu Sungai Tengah</option>
+                    <option value="Hulu Sungai Selatan">Hulu Sungai Selatan</option>
+                    <option value="Kotabaru">Kotabaru</option>
+                    <option value="Tabalong">Tabalong</option>
+                    <option value="Tanah Bumbu">Tanah Bumbu</option>
+                    <option value="Tanah Laut">Tanah Laut</option>
+                    <option value="Tapin">Tapin</option>
+                </select>
+
+                <label for="address">Address</label>
+                <input type="text" placeholder="Address" oninput="this.className = ''" name="address">
             </div>
 
             <!-- Tab 2 -->

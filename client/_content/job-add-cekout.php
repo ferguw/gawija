@@ -13,8 +13,37 @@ $feeGawija = $totalSalary * 0.1;
 $ppn = $totalSalary * 0.05;
 $grandT = $totalSalary + $feeGawija + $ppn;
 
+if (isset($_POST['add-pro'])) {
+    $projN = $_GET["projN"];
+    $address = $_GET["address"];
+    $cek_job = mysqli_query($con, "SELECT * FROM job WHERE `judul` = '$projN' AND `idc` = '$idc' AND `address` = '$address'");
+
+    if (mysqli_num_rows($cek_job) < 1) {
+        $comp = $data_client['comp'];
+        $projD = $_GET['projD'];
+        $city = $_GET["city"];
+        $workD = $_GET['workD'];
+        $date =  explode("-", $_GET['date-proj']);
+        $dateStart = date("yy-m-d", strtotime($date[0]));
+        $dateEnd = date("yy-m-d", strtotime($date[1]));
+
+        mysqli_query($con, "INSERT INTO `job`(`idj`, `idc`, `comp`, `judul`, `deskripsi`, `start`, `end`, `address`, `city`, `workday`, `total_salary`, `fee_gawiae`, `grandtotal`, `pajak`, `status`) VALUES (NULL, '$idc', '$comp','$projN', '$projD', '$dateStart', '$dateEnd', '$address', '$city', '$workD', '$totalSalary', '$feeGawija', '$grandT', '$ppn', 'pending')");
+
+        for ($i = 0; $i < $jumlah; $i++) {
+            $data_idj = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM job WHERE idc = '$idc' AND judul = '$projN' "));
+            $idj = $data_idj['idj'];
+            mysqli_query($con, "INSERT INTO job_req (`idjr`, `idj`, `numtalent`, `salary`, `type`) VALUES (NULL, '$idj', '$amountT[$i]', '$salaryD[$i]', '$talentT[$i]')");
+            echo "<script>window.location.href='?p=job-list'</script>";
+        }
+    } else {
+        echo "<script>Swal.fire({icon: 'error',title: 'Oops...',text: 'Data tersebut sudah anda inputkan'})</script>";
+        // echo "<script>window.location.href='?p=job-list'</script>";
+    }
+}
+
 ?>
 <link rel="stylesheet" href="../assets/css/form-wizard.css">
+
 <!-- Air DatePicker -->
 <link rel="stylesheet" href="../assets/css/datepicker.min.css" type="text/css">
 <!-- Air DatePicker -->
@@ -25,10 +54,10 @@ $grandT = $totalSalary + $feeGawija + $ppn;
         <form id="regForm" action="" method="POST">
             <!-- Nilai Tampungan -->
             <input type="text" hidden value="<?= $_GET["projN"] ?>" name="projN">
-            <input type="text" hidden value="<?= $_GET["compN"] ?>" name="compN">
+            <input type="text" hidden value="<?= $_GET["projD"] ?>" name="projD">
+            <input type="text" hidden value="<?= $_GET["city"] ?>" name="city">
+            <input type="text" hidden value="<?= $_GET["address"] ?>" name="address">
             <input type="text" hidden value="<?= $_GET["workD"] ?>" name="workD">
-            <input type="text" hidden value="<?= $variable ?>" name="">
-            <input type="text" hidden value="<?= $variable ?>" name="">
 
 
             <div class="tab">
@@ -37,16 +66,16 @@ $grandT = $totalSalary + $feeGawija + $ppn;
                 <input type="text" data-range="true" disabled placeholder="Start - End" data-multiple-dates-separator=" - " data-language="en" class="datepicker-here form-control" name="date-proj" value="<?= $_GET['date-proj'] ?>" />
 
                 <label for="totalSalary">Total Salary</label>
-                <input type="text" placeholder="Total Salary " id="totalSalary" oninput="this.className = ''" name="totalSalary" value=" <?= number_format($totalSalary, 0, ",", '.') ?>">
+                <input type="text" placeholder="Total Salary " disabled id="totalSalary" oninput="this.className = ''" name="totalSalary" value=" <?= number_format($totalSalary, 0, ",", '.') ?>">
 
                 <label for="feeGawija">Fee Gawija</label>
-                <input type="text" placeholder="Fee Gawija " id="feeGawija" oninput="this.className = ''" name="feeGawija" value="<?= number_format($feeGawija, 0, ",", '.') ?> ">
+                <input type="text" placeholder="Fee Gawija " disabled id="feeGawija" oninput="this.className = ''" name="feeGawija" value="<?= number_format($feeGawija, 0, ",", '.') ?> ">
 
                 <label for="ppn">PPN 5%</label>
-                <input type="text" placeholder="PPN " id="ppn" oninput="this.className = ''" name="ppn" value="<?= number_format($ppn, 0, ",", '.') ?> ">
+                <input type="text" placeholder="PPN " disabled id="ppn" oninput="this.className = ''" name="ppn" value="<?= number_format($ppn, 0, ",", '.') ?> ">
 
                 <label for="grandT">Grand Total</label>
-                <input type="text" placeholder="Grand Total " id="grandT" oninput="this.className = ''" name="grandT" value="<?= number_format($grandT, 0, ",", '.') ?> ">
+                <input type="text" placeholder="Grand Total " disabled id="grandT" oninput="this.className = ''" name="grandT" value="<?= number_format($grandT, 0, ",", '.') ?> ">
 
 
             </div>
