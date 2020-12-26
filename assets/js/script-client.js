@@ -13,6 +13,24 @@ function successInput() {
     });
 }
 
+function addpro(){
+    swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    }).then((willinput) => {
+        if (willinput) {
+            swal("Poof! Your imaginary file has been deleted!", {
+            icon: "success",
+            });
+        } else {
+            swal("Your imaginary file is safe!");
+        }
+        });
+}
+
 // ==============================================================================
 function sidebar_move(menu_link) { // Sidebar Ketika Berpindah Halaman
     var linke = menu_link;

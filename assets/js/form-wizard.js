@@ -12,7 +12,12 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
+    // var nextBtn = document.getElementById("nextBtn");
+    // nextBtn.remove();
+    // var html = '';
+    //   html+='<button type="submit" id="nextBtn">Cekout</button>';
+    //   $('#BtnSend').append(html);
+    document.getElementById("nextBtn").innerHTML = "Cekout"
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
@@ -70,3 +75,19 @@ function fixStepIndicator(n) {
   //... and adds the "active" class on the current step:
   x[n].className += " active";
 }
+
+$("#tambahTalent").click(() => {
+    var htmlTambah = "";
+    htmlTambah += "<hr>";
+    htmlTambah += "<label for='date-proj'>Talent Type</label>";
+    htmlTambah += "<select class='custom-select mr-sm-2' name='talentType[]' id='inlineFormCustomSelect'>";
+    htmlTambah += "<option selected disabled>Choose...</option>";
+    htmlTambah += "<option value='SPG'>SPG</option>";
+    htmlTambah += "<option value='SPB'>SPB</option>";
+    htmlTambah += "</select>";
+    htmlTambah += "<label for='salaryD'>Salary per Day</label>";
+    htmlTambah += "<input type='number' placeholder='Salary Day' oninput='this.className = ''' name='salaryD[]'>";
+    htmlTambah += "<label for='amountT'>Amount of Talent</label>";
+    htmlTambah += "<input type='number' placeholder='Amount of Talent' oninput='this.className = ''' name='amountT[]'>";
+    $('#talentTypeTambah').append(htmlTambah);
+  });

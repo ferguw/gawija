@@ -66,7 +66,7 @@ if (isset($_GET['log'])) {
                   echo "&nbsp;";
                 }
               ?>
-              <!-- Banner -->'
+              <!-- Banner -->
 
               <!-- Panggil -->
               <?php require("_content/$p.php"); ?>
