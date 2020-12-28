@@ -60,7 +60,7 @@
                     </select>
 
                     <label for="salaryD">Salary per Day</label>
-                    <input type="number" placeholder="Salary Day" oninput="this.className = ''" name="salaryD[]">
+                    <input type="number" placeholder="Salary Day" id="rupiah" oninput="this.className = ''" name="salaryD[]">
 
                     <label for="amountT">Amount of Talent</label>
                     <input type="number" placeholder="Amount of Talent" oninput="this.className = ''" name="amountT[]">
@@ -68,19 +68,6 @@
                 <div id="talentTypeTambah"></div>
             </div>
 
-            <!-- <div class="tab">
-                <label for="totalSalary">Total Salary</label>
-                <input type="text" placeholder="Total Salary" oninput="this.className = ''" name="totalSalary">
-
-                <label for="feeGawija">Fee Gawija</label>
-                <input type="text" placeholder="Fee Gawija " oninput="this.className = ''" name="feeGawija">
-
-                <label for="ppn">PPN 5%</label>
-                <input type="text" placeholder="PPN " oninput="this.className = ''" name="ppn">
-
-                <label for="grandT">Grand Total</label>
-                <input type="text" placeholder="Grand Total " oninput="this.className = ''" name="grandT">
-            </div> -->
 
             <div style="overflow:auto;">
                 <div id="BtnSend" style="float:right;">
@@ -117,3 +104,19 @@
 <!-- Include English language -->
 <script src="../assets/js/date-picker/i18n/datepicker.en.js"></script>
 <!-- Air DatePicker -->
+<script src="jquery.maskMoney.js" type="text/javascript"></script>
+
+<!-- <script>
+    $('input#rupiah').keyup(function(event) {
+
+        // skip for arrow keys
+        if (event.which >= 37 && event.which <= 40) return;
+
+        // format number
+        $(this).val(function(index, value) {
+            return value
+                .replace(/\D/g, "")
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        });
+    });
+</script> -->

@@ -1,7 +1,7 @@
 <!-- Begin::header-menu -->
 <?php
 $idc = $_SESSION["id_client"];
-$data_client = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM client WHERE `idc` = '$idc' "))
+$data_client = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM client WHERE `idc` = '$idc' "));
 ?>
 <div class="row header">
   <div class="col-lg-12">

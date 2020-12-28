@@ -20,9 +20,6 @@ $query_job_req = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idj' 
 $query_job_req_value = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idj' ");
 
 
-
-$insert = "INSERT INTO `ajuan` (`idaj`, `idj`, `idt`) VALUES (NULL,'$idj','$idt')";
-
 ?>
 <!-- div::content -->
 <div class="row d-content">

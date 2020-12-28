@@ -33,10 +33,25 @@ if (isset($_POST['add-pro'])) {
             $data_idj = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM job WHERE idc = '$idc' AND judul = '$projN' "));
             $idj = $data_idj['idj'];
             mysqli_query($con, "INSERT INTO job_req (`idjr`, `idj`, `numtalent`, `salary`, `type`) VALUES (NULL, '$idj', '$amountT[$i]', '$salaryD[$i]', '$talentT[$i]')");
-            echo "<script>window.location.href='?p=job-list'</script>";
+            echo "<script>
+                    Swal.fire({
+                    title: 'Yey?',
+                    icon: 'success',
+                    text: 'Jika anda menerima job ini maka anda telah setuju dengan syarat dan ketentuan GAWIJA!',
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya, saya terima!'
+                }).then((result) => {
+                    if (result.value) {
+                        window.location = '?p=job-list';
+                    }
+                })
+                </script>";
         }
     } else {
-        echo "<script>Swal.fire({icon: 'error',title: 'Oops...',text: 'Data tersebut sudah anda inputkan'})</script>";
+        echo "<script>window.location = '?p=job-list';</script>";
         // echo "<script>window.location.href='?p=job-list'</script>";
     }
 }

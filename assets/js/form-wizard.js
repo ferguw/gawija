@@ -86,7 +86,7 @@ $("#tambahTalent").click(() => {
     htmlTambah += "<option value='SPB'>SPB</option>";
     htmlTambah += "</select>";
     htmlTambah += "<label for='salaryD'>Salary per Day</label>";
-    htmlTambah += "<input type='number' placeholder='Salary Day' oninput='this.className = ''' name='salaryD[]'>";
+    htmlTambah += "<input type='number' placeholder='Salary Day' id='rupiah' oninput='this.className = ''' name='salaryD[]'>";
     htmlTambah += "<label for='amountT'>Amount of Talent</label>";
     htmlTambah += "<input type='number' placeholder='Amount of Talent' oninput='this.className = ''' name='amountT[]'>";
     $('#talentTypeTambah').append(htmlTambah);
