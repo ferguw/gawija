@@ -4,13 +4,18 @@
 $cari_my_job = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc'  "));
 $my_list_job = mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc'");
 
-$idjob = $cari_my_job['idj'];
-$data_ajuan = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idjob'"));
-$id_talent_ajuan = $data_ajuan['idt'];
+if (mysqli_num_rows($my_list_job) < 1) {
+    $displayContent = 'none';
+} else {
+    $displayContent = '';
+    $idjob = $cari_my_job['idj'];
+    $data_ajuan = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idjob'"));
+    $id_talent_ajuan = $data_ajuan['idt'];
 
-$data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE `idt` = '$id_talent_ajuan'  "));
+    $data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE `idt` = '$id_talent_ajuan'  "));
 
-$query_job_requirement = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idjob' ");
+    $query_job_requirement = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idjob' ");
+}
 
 
 
@@ -18,7 +23,7 @@ $query_job_requirement = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` =
 ?>
 
 <!-- div::content -->
-<div class="row d-content">
+<div class="row d-content" style="display:<?= $displayContent ?>">
     <!-- Begin::Card -->
     <div class="col-lg-12 page-content">
         <h3>Talent yang mengajukan diri untuk Bergabung dengan Project Anda</h3>
@@ -28,56 +33,56 @@ $query_job_requirement = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` =
             totam laboriosam ut.
         </p>
 
-            <!-- Card-Begin::Content -->
-            <div class="row">
-                <div class="col-12 card-content">
-                    <div class="row align-items-center">
-                        <div class="col-3 col-lg-1">
-                            <div class="img-profil">
-                                <a href="#!" onclick="sidebar()"><img src="../assets/images/avatar/avatar-1.png" alt="avatar-user" width="100%"></a>
-                            </div>
-                        </div>
-                        <div class="col-9 col-lg-11">
-                            <h4><?= $data_talent['name'] ?></h4>
-                            <span><?= $data_talent['type']; ?></span>
-                            <hr>
+        <!-- Card-Begin::Content -->
+        <div class="row">
+            <div class="col-12 card-content">
+                <div class="row align-items-center">
+                    <div class="col-3 col-lg-1">
+                        <div class="img-profil">
+                            <a href="#!" onclick="sidebar()"><img src="../assets/images/avatar/avatar-1.png" alt="avatar-user" width="100%"></a>
                         </div>
                     </div>
-                    <div class="row align-items-center justify-content-center">
-                        <div class="col-12 col-lg-6 text-center">
-                            <div class="row">
-                                <div class="col-12 col-lg-6">
-                                    <h5><?= $cari_my_job['judul'] ?></h5>
-                                    <span>Requirement Job
-                                        <?php 
-                                            while ($data_job_requirement = mysqli_fetch_assoc($query_job_requirement)) {
-                                                echo ", " . $data_job_requirement['type'];   
-                                            }
-                                        ?>
-                                    </span>
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <h5>Dealine Pengumpulan Talent</h5>
-                                    <span>Monday, 28 December 2020</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 text-center mt-3">
-                            <a href="#!" class="btn btn-b1-2">Detail...</a>
-                        </div>
+                    <div class="col-9 col-lg-11">
+                        <h4><?= $data_talent['name'] ?></h4>
+                        <span><?= $data_talent['type']; ?></span>
+                        <hr>
                     </div>
-
                 </div>
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-12 col-lg-6 text-center">
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <h5><?= $cari_my_job['judul'] ?></h5>
+                                <span>Requirement Job
+                                    <?php
+                                    while ($data_job_requirement = mysqli_fetch_assoc($query_job_requirement)) {
+                                        echo ", " . $data_job_requirement['type'];
+                                    }
+                                    ?>
+                                </span>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <h5>Dealine Pengumpulan Talent</h5>
+                                <span>Monday, 28 December 2020</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-center mt-3">
+                        <a href="#!" class="btn btn-b1-2">Detail...</a>
+                    </div>
+                </div>
+
             </div>
-            <!-- Card-End::Content -->
-            <hr>
+        </div>
+        <!-- Card-End::Content -->
+        <hr>
     </div>
 
     <!-- End::Card -->
 </div>
 <!-- div::content -->
 <!-- div::content -->
-<div class="row d-content">
+<div class="row d-content" style="display:<?= $displayContent ?>">
     <!-- Begin::Card -->
     <div class="col-lg-12 page-content">
         <h3>Project Anda yang dilihat oleh Semua Talent</h3>
@@ -87,7 +92,7 @@ $query_job_requirement = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` =
             totam laboriosam ut.
         </p>
         <?php
-        while ($data_list_job = mysqli_fetch_assoc($my_list_job)) :
+        while ($data_list_job = mysqli_fetch_assoc($my_list_job)) {
         ?>
             <!-- Card-Begin::Content -->
             <div class="row">
@@ -154,7 +159,7 @@ $query_job_requirement = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` =
             </div>
             <!-- Card-End::Content -->
             <hr>
-        <?php endwhile; ?>
+        <?php } ?>
 
     </div>
 
