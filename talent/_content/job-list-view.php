@@ -3,10 +3,10 @@ $idj = $_GET["id-job"];
 
 //Mencari Job pada tabel job
 $data_job_search = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM job WHERE `idj` = '$idj' "));
-    $tgl_start_list_job = date_create($data_job_search['start']); //Add in Variable Date Fom SQL
-    $tgl_start_list_job =  date_format($tgl_start_list_job, "l, d F Y"); // Custom Date And Add to New Variable
-    $tgl_end_list_job = date_create($data_job_search['end']); //Add in Variable Date Fom SQL
-    $tgl_end_list_job =  date_format($tgl_end_list_job, "l, d F Y"); // Custom Date And Add to New Variable
+$tgl_start_list_job = date_create($data_job_search['start']); //Add in Variable Date Fom SQL
+$tgl_start_list_job =  date_format($tgl_start_list_job, "l, d F Y"); // Custom Date And Add to New Variable
+$tgl_end_list_job = date_create($data_job_search['end']); //Add in Variable Date Fom SQL
+$tgl_end_list_job =  date_format($tgl_end_list_job, "l, d F Y"); // Custom Date And Add to New Variable
 
 //mengambil data dri tabel job
 $id_client = $data_job_search['idc'];
@@ -20,10 +20,8 @@ $query_job_req = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idj' 
 $query_job_req_value = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idj' ");
 
 
-if (isset($_POST['ajukan-diri'])) {
-    mysqli_query($con, "INSERT INTO `ajuan` (`idaj`, `idj`, `idt`) VALUES (NULL,'$idj','$idt')");
-    echo "<script>window.location.href='?p=job-list'</script>";
-}
+
+$insert = "INSERT INTO `ajuan` (`idaj`, `idj`, `idt`) VALUES (NULL,'$idj','$idt')";
 
 ?>
 <!-- div::content -->
@@ -95,13 +93,22 @@ if (isset($_POST['ajukan-diri'])) {
                     <div class="col-lg-4 offset-lg-1 text-center mt-3">
                         <form method="POST">
                             <!-- <button type="submit" name="ajukan_diri" class="btn btn-b1">Ajukan </button> -->
-                            <?php 
-                                $cari_job_ajuan_talent = mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idj' AND `idt` = '$idt' ");
-                                    if (mysqli_num_rows($cari_job_ajuan_talent) < 1) {
-                                        echo '<button type="submit" name="ajukan-diri" class="btn btn-b1">Ajukan </button>';
-                                    }else {
-                                        echo '<button class="btn btn-b1">Sudah Di Ajukan </button>';
-                                    }
+                            <?php
+                            $cari_job_ajuan_talent = mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idj' AND `idt` = '$idt' ");
+                            if (mysqli_num_rows($cari_job_ajuan_talent) < 1) {
+                                echo '<button type="button" name="ajukan-diri" onclick="ajukan()" class="btn btn-b1">Ajukan </button>';
+                            } else {
+                                echo '<button class="btn btn-b1">Anda Telah Mengajukan</button>';
+                                echo "
+                                    <script>
+                                        Swal.fire(
+                                            'Yey!',
+                                            'Anda telah mengajukan diri pada Job ini tunggu sampai permberitahuan selanjutnya.',
+                                            'success'
+                                        )
+                                    </script>
+                                ";
+                            }
                             ?>
                         </form>
                     </div>
@@ -115,3 +122,23 @@ if (isset($_POST['ajukan-diri'])) {
     <!-- End::Card -->
 </div>
 <!-- div::content -->
+
+<script>
+    function ajukan() {
+        var idj = <?= $idj ?>;
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            icon: 'warning',
+            text: "Jika anda menerima job ini maka anda telah setuju dengan syarat dan ketentuan GAWIJA!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, saya terima!'
+        }).then((result) => {
+            if (result.value) {
+                window.location = "?p=ajuan_process&status=616a756b616e&idj=" + idj;
+            }
+        })
+    }
+</script>

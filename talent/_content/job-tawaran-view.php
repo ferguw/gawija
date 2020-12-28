@@ -3,10 +3,10 @@ $idj = $_GET["id-job"];
 
 //Mencari Job pada tabel job
 $data_job_search = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM job WHERE `idj` = '$idj' "));
-    $tgl_start_list_job = date_create($data_job_search['start']); //Add in Variable Date Fom SQL
-    $tgl_start_list_job =  date_format($tgl_start_list_job, "l, d F Y"); // Custom Date And Add to New Variable
-    $tgl_end_list_job = date_create($data_job_search['end']); //Add in Variable Date Fom SQL
-    $tgl_end_list_job =  date_format($tgl_end_list_job, "l, d F Y"); // Custom Date And Add to New Variable
+$tgl_start_list_job = date_create($data_job_search['start']); //Add in Variable Date Fom SQL
+$tgl_start_list_job =  date_format($tgl_start_list_job, "l, d F Y"); // Custom Date And Add to New Variable
+$tgl_end_list_job = date_create($data_job_search['end']); //Add in Variable Date Fom SQL
+$tgl_end_list_job =  date_format($tgl_end_list_job, "l, d F Y"); // Custom Date And Add to New Variable
 
 //mengambil data dri tabel job
 $id_client = $data_job_search['idc'];
@@ -19,13 +19,11 @@ $query_job_req = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idj' 
 //Mncari data requirement job (Value Job {jumlah talent, salary})
 $query_job_req_value = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idj' ");
 
-
-if (isset($_POST['terima-pengajuan'])) {
-    mysqli_query($con, "UPDATE `tawaran` SET `status` = 'accept' WHERE `idj` = '$idj' AND `idt` = '$idt' ;");
-    echo "<script>window.location.href='?p=job-tawaran'</script>";
-}
-
 ?>
+
+
+
+
 <!-- div::content -->
 <div class="row d-content">
     <!-- Begin::Card -->
@@ -97,10 +95,19 @@ if (isset($_POST['terima-pengajuan'])) {
                             <!-- <button type="submit" name="terima-pengajuan" class="btn btn-b1">Terima Permintaan</button> -->
                             <?php
                             $cari_job_ajuan_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM tawaran WHERE `idj` = '$idj' AND `idt` = '$idt' "));
-                            if ($cari_job_ajuan_talent['status'] === 'pending' ) {
-                                echo '<button type="submit" name="terima-pengajuan" class="btn btn-b1">Terima Permintaan </button>';
+                            if ($cari_job_ajuan_talent['status'] == 'pending') {
+                                echo '<button type="button" name="terima-pengajuan" onclick="masuk()" class="btn btn-b1">Terima Permintaan </button>';
                             } else {
-                                echo '<button class="btn btn-b1">Anda Menerima Permintaan Ini </button>';
+                                echo '<button class="btn btn-b1">Anda Telah Menerima Permintaan Ini </button>';
+                                echo "
+                                    <script>
+                                        Swal.fire(
+                                            'Yey!',
+                                            'Anda telah menerima Job ini tunggu sampai permberitahuan selanjutnya.',
+                                            'success'
+                                        )
+                                    </script>
+                                ";
                             }
                             ?>
                         </form>
@@ -115,3 +122,31 @@ if (isset($_POST['terima-pengajuan'])) {
     <!-- End::Card -->
 </div>
 <!-- div::content -->
+
+<script type="text/javascript">
+    function masuk() {
+        var idj = <?= $idj ?>;
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            icon: 'warning',
+            text: "Jika anda menerima job ini maka anda telah setuju dengan syarat dan ketentuan GAWIJA!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, saya terima!'
+        }).then((result) => {
+            if (result.value) {
+                window.location = "?p=tawaran_process&status=746572696d61&idj=" + idj;
+            }
+        })
+    }
+
+    function sudahAda() {
+        Swal.fire(
+            'Yey!',
+            'Anda telah menerima Job ini tunggu sampai permberitahuan selanjutnya.',
+            'success'
+        )
+    }
+</script>
