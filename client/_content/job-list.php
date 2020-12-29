@@ -94,7 +94,7 @@ if (mysqli_num_rows($my_list_job) < 1) {
                     </div>
                     <div class="row align-items-center justify-content-center">
                         <div class="col-lg-4 offset-lg-8 text-center mt-3">
-                            <a href="?p=job-list-view&id=<?= $data_list_job['idj'] ?>" class="btn btn-b1">Detail...</a>
+                            <a href="?p=job-list-view&idj=<?= $data_list_job['idj'] ?>" class="btn btn-b1">Detail...</a>
                         </div>
                     </div>
 

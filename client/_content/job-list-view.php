@@ -1,3 +1,10 @@
+<?php
+
+$idj = $_GET["idj"];
+$query_tawaran = mysqli_query($con, "SELECT * FROM tawaran WHERE `idj` = '$idj' ");
+$query_ajuan = mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idj'")
+
+?>
 <!-- div::content -->
 <div class="row d-content">
     <!-- Begin::Card -->
@@ -24,10 +31,10 @@
                             <li><i class="material-icons iconC">person_pin</i> &nbsp;Type, 1, 2, 3</li>
                             <li><i class="material-icons iconC">people</i> &nbsp;Required SPG : 3</li>
                             <li><i class="material-icons iconC">attach_money</i>&nbsp;Salary SPG : Rp
-                                <?=number_format('150000',0,",",'.')?> </li>
+                                <?= number_format('150000', 0, ",", '.') ?> </li>
                             <li><i class="material-icons iconC">people</i> &nbsp;Required SPB : 3</li>
                             <li><i class="material-icons iconC">attach_money</i>&nbsp;Salary SPB : Rp
-                                <?=number_format('150000',0,",",'.')?> </li>
+                                <?= number_format('150000', 0, ",", '.') ?> </li>
                             <li><i class="material-icons iconC">today</i>&nbsp;<span>2 Day</span></li>
                             <li><i class="material-icons iconC">location_on</i>&nbsp;<span>Location(city)</span></li>
                             <li><i class="material-icons iconC">location_city</i>&nbsp;<span>(Alamat) </span></li>
@@ -52,8 +59,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 offset-lg-1 text-center">
-                        <a href="?p=job-list-edit&idj=1" name="ajukan-diri" class="btn btn-b1"><i
-                                class="material-icons iconC">edit</i> Edit</a>
+                        <a href="?p=job-list-edit&idj=1" name="ajukan-diri" class="btn btn-b1"><i class="material-icons iconC">edit</i> Edit</a>
                     </div>
                 </div>
 
@@ -84,71 +90,54 @@
         </div>
         <div class="row justify-content-around">
             <!-- class high untuk warna orange -->
-            <div class="col-lg-3 card-list">
-                <div class="row">
-                    <div class="col-12 d-img-list high">
-                        <div class="img-list">
-                            <img src="../assets/images/avatar/avatar-1.png" class="img-talent" alt="Profil Img" width="100%">
-                        </div>
-                        <div class="card-ket text-center">
-                            <h5>Daffa Ram Herriza</h5>
-                            <span>Type</span>
-                        </div>
-                        <div class="card-bottom">
-                            <button class="btn btn-card btnc-net">View Detail</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- tanpa class high yang biasa untuk warna orange -->
-            <div class="col-lg-3 card-list">
-                <div class="row">
-                    <div class="col-12 d-img-list">
-                        <div class="img-list">
-                            <img src="../assets/images/avatar/avatar-1.png" class="img-talent" alt="Profil Img" width="100%">
-                        </div>
-                        <div class="card-ket text-center">
-                            <h5>Daffa Ram Herriza</h5>
-                            <span>Type</span>
-                        </div>
-                        <div class="card-bottom">
-                            <button class="btn btn-card btnc-net">View Detail</button>
+
+            <?php
+            while ($data_tawaran = mysqli_fetch_assoc($query_tawaran)) {
+                $idt = $data_tawaran['idt'];
+                $data_tawaran_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE `idt` = '$idt' "));
+            ?>
+                <div class="col-lg-3 card-list">
+                    <div class="row">
+                        <div class="col-12 d-img-list high">
+                            <div class="img-list">
+                                <img src="../assets/images/avatar/avatar-1.png" class="img-talent" alt="Profil Img" width="100%">
+                            </div>
+                            <div class="card-ket text-center">
+                                <h5><?= $data_tawaran_talent['name'] ?></h5>
+                                <span><?= $data_tawaran_talent['type'] ?></span>
+                            </div>
+                            <div class="card-bottom">
+                                <a href="?p=job-list-view&idj=<?= $idj ?>&idt=<?= $idt ?>" class="btn btn-card btnc-net">View Detail</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 card-list">
-                <div class="row">
-                    <div class="col-12 d-img-list">
-                        <div class="img-list">
-                            <img src="../assets/images/avatar/avatar-1.png" class="img-talent" alt="Profil Img" width="100%">
-                        </div>
-                        <div class="card-ket text-center">
-                            <h5>Daffa Ram Herriza</h5>
-                            <span>Type</span>
-                        </div>
-                        <div class="card-bottom">
-                            <button class="btn btn-card btnc-net">View Detail</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 card-list">
-                <div class="row">
-                    <div class="col-12 d-img-list">
-                        <div class="img-list">
-                            <img src="../assets/images/avatar/avatar-1.png" class="img-talent" alt="Profil Img" width="100%">
-                        </div>
-                        <div class="card-ket text-center">
-                            <h5>Daffa Ram Herriza</h5>
-                            <span>Type</span>
-                        </div>
-                        <div class="card-bottom">
-                            <button class="btn btn-card btnc-net">View Detail</button>
+            <?php } ?>
+
+            <?php
+            while ($data_ajuan = mysqli_fetch_assoc($query_ajuan)) {
+                $idt = $data_ajuan['idt'];
+                $data_ajuan_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE `idt` = '$idt' "));
+            ?>
+                <!-- tanpa class high yang biasa untuk warna orange -->
+                <div class="col-lg-3 card-list">
+                    <div class="row">
+                        <div class="col-12 d-img-list">
+                            <div class="img-list">
+                                <img src="../assets/images/avatar/avatar-1.png" class="img-talent" alt="Profil Img" width="100%">
+                            </div>
+                            <div class="card-ket text-center">
+                                <h5><?= $data_ajuan_talent['name'] ?></h5>
+                                <span><?= $data_ajuan_talent['type'] ?></span>
+                            </div>
+                            <div class="card-bottom">
+                                <a href="?p=job-list-view&idj=<?= $idj ?>&idt=<?= $idt ?>" class="btn btn-card btnc-net">View Detail</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php } ?>
+
         </div>
         <!-- Card-End::Content -->
     </div>
