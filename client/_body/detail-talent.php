@@ -3,7 +3,7 @@ $idt = $_GET["idt"];
 $data_talent_profile = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE `idt` = '$idt'"));
 ?>
 <!-- Info -->
-<div class="row d-info">
+<div class="row d-info" id="biodata">
     <div class="col-lg-12 card-list-info">
         <div class="head d-img-list-big">
             <div class="img-list-big">

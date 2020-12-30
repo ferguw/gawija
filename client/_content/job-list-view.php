@@ -1,6 +1,11 @@
 <?php
 
 $idj = $_GET["idj"];
+$jumlah = mysqli_num_rows(mysqli_query($con, "SELECT * FROM job_req WHERE idj = '$idj'"));
+
+$max_limit = mysqli_fetch_array(mysqli_query($con, "SELECT idj = '$idj', SUM(numtalent) FROM job_req"));
+$limit = $max_limit[1];
+
 $query_tawaran = mysqli_query($con, "SELECT * FROM tawaran WHERE `idj` = '$idj' ");
 $query_ajuan = mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idj'")
 
@@ -59,7 +64,7 @@ $query_ajuan = mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idj'")
                         </div>
                     </div>
                     <div class="col-lg-4 offset-lg-1 text-center">
-                        <a href="?p=job-list-edit&idj=1" name="ajukan-diri" class="btn btn-b1"><i class="material-icons iconC">edit</i> Edit</a>
+                        <a href="?p=job-list-edit&idj=1" class="btn btn-b1"><i class="material-icons iconC">edit</i> Edit</a>
                     </div>
                 </div>
 
@@ -80,10 +85,10 @@ $query_ajuan = mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idj'")
             <div class="col-12 card-content">
                 <div class="row">
                     <div class="col-lg-2 offset-lg-8 text-center mb-3">
-                        <a href="?p=job-list-edit&idj=1" name="ajukan-diri" class="btn btn-b4 btnc-or-2">Accept Submissions</a>
+                        <a href="#" name="ajukan-diri" class="btn btn-b4 btnc-or-2">Accept Submissions</a>
                     </div>
                     <div class="col-lg-2 text-center mb-3">
-                        <a href="?p=job-list-edit&idj=1" name="ajukan-diri" class="btn btn-b4 btnc-br-2">Talent Submission</a>
+                        <a href="#" name="ajukan-diri" class="btn btn-b4 btnc-br-2">Talent Submission</a>
                     </div>
                 </div>
             </div>
@@ -106,8 +111,9 @@ $query_ajuan = mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idj'")
                                 <h5><?= $data_tawaran_talent['name'] ?></h5>
                                 <span><?= $data_tawaran_talent['type'] ?></span>
                             </div>
-                            <div class="card-bottom">
-                                <a href="?p=job-list-view&idj=<?= $idj ?>&idt=<?= $idt ?>" class="btn btn-card btnc-net">View Detail</a>
+                            <div class="card-bottom" align="center">
+                                <input type="checkbox" name="check[]" id="">
+                                <a href="?p=job-list-view&idj=<?= $idj ?>&idt=<?= $idt ?>" onclick="fokus()" class="btn btn-card btnc-net">View Detail</a>
                             </div>
                         </div>
                     </div>
@@ -130,8 +136,9 @@ $query_ajuan = mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idj'")
                                 <h5><?= $data_ajuan_talent['name'] ?></h5>
                                 <span><?= $data_ajuan_talent['type'] ?></span>
                             </div>
-                            <div class="card-bottom">
-                                <a href="?p=job-list-view&idj=<?= $idj ?>&idt=<?= $idt ?>" class="btn btn-card btnc-net">View Detail</a>
+                            <div class="card-bottom" align="center">
+                                <input type="checkbox" name="check[]" id="">
+                                <a href="?p=job-list-view&idj=<?= $idj ?>&idt=<?= $idt ?>" onclick="fokus()" class=" btn btn-card btnc-net">View Detail</a>
                             </div>
                         </div>
                     </div>
@@ -145,3 +152,14 @@ $query_ajuan = mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idj'")
     <!-- End::Card -->
 </div>
 <!-- div::content -->
+<script>
+    var limit = <?= $limit ?>;
+    $("input:checkbox").click(function() {
+        var bol = $("input:checkbox:checked").length >= limit;
+        $("input:checkbox").not(":checked").attr("disabled", bol);
+    });
+
+    function fokus() {
+        document.getElementById("biodata").focus();
+    }
+</script>

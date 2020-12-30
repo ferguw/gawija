@@ -1,6 +1,4 @@
 <?php
-
-
 $cari_my_job = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc'  "));
 $my_list_job = mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc'");
 
