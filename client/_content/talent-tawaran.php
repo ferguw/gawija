@@ -2,8 +2,8 @@
 <div class="row d-content">
     <!-- Begin::Card -->
     <div class="col-lg-12 page-content">
-        <h2 class="text-center mb-5">JOB SUBMISSION</h2>
-        <h3>Tawaran Project dari Klien yang Tertarik Dengan Anda</h3>
+        <h2 class="text-center mb-5">TALENT SUBMISSION</h2>
+        <h3>Talent Yang Tertarik Dengan Project Anda</h3>
         <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error vero sit deleniti aspernatur eaque
             unde, accusantium obcaecati alias sunt veritatis minus odit nostrum, excepturi aperiam velit corporis,
@@ -44,7 +44,7 @@
                         <div class="col-12 col-lg-4 text-center">
                             <h5>Start Project</h5>
                             <span>Monday, 21 December 2020</span>
-                            <br>&nbsp;
+                            &nbsp;
                             <h5>End Project</h5>
                             <span>Monday, 28 December 2020</span>
                         </div>
@@ -60,11 +60,11 @@
         <?php } ?>
 
         <!-- Navigasi Detail -->
-        <div class="row justify-content-center">
+        <!-- <div class="row justify-content-center">
             <div class="col-lg-3 text-center">
                 <a href="#!" class="btn btn-b2">Load More...</a>
             </div>
-        </div>
+        </div> -->
         <!-- Navigasi Detail -->
     </div>
 
