@@ -21,7 +21,7 @@ $tgl_end_list_job =  date_format($tgl_end_list_job, "l, d F Y"); // Custom Date 
         for ($i=0; $i < $panjang ; $i++) { 
             // echo $i;
             mysqli_query($con, "INSERT INTO job_ongoing (`idjo`, `idj`, `idt`) VALUES (NULL, '$idj', '$talentID[$i]')");
-            mysqli_query($con, "UPDATE `job` SET `status` = 'ongoing' WHERE `idj` = '$idj';");
+            mysqli_query($con, "UPDATE job SET `status` = 'ongoing' WHERE `idj` = '$idj';");
             echo "<script>window.location ='?p=job-list';</script>";
         }
 
