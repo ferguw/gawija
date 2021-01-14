@@ -1,10 +1,9 @@
 <?php
 $cari_my_job = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc'  "));
 $my_job = mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc'");
-$my_list_job_ongoing = mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc' AND `status` = 'ongoing'");
-
+$my_list_job_ongoing = mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc' AND `status` = 'pending'");
 if (mysqli_num_rows($my_list_job_ongoing) < 1) {
-    $displayContentongoing = 'none';
+    $displayContent = 'none';
 } else {
     $idjob = $cari_my_job['idj'];
     $data_ajuan = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idjob'"));
@@ -16,13 +15,13 @@ if (mysqli_num_rows($my_list_job_ongoing) < 1) {
 }
 
 
-
 ?>
 <!-- div::content -->
 <div class="row d-content">
+
     <!-- Begin::Card -->
-    <div class="col-lg-12 page-content" style="display:<?= $displayContentongoing ?>">
-        <h3 class="text-center">Report</h3>
+    <div class="col-lg-12 page-content" style="display:<?= $displayContent ?>">
+        <h3 class="text-center">Projects Pending Approval</h3>
         <?php
         while ($data_list_job = mysqli_fetch_assoc($my_list_job_ongoing)) :
         ?>
@@ -62,37 +61,26 @@ if (mysqli_num_rows($my_list_job_ongoing) < 1) {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-6 talent-join">
-                            <h4 class="text-center">Talent Bergabung</h4>
-                            <div class="img-profil-mini">
-                                <img src="../assets/images/avatar/avatar-1.png" alt="avatar-user" width="100%">
-                            </div>
-                            <div class="img-profil-mini">
-                                <img src="../assets/images/avatar/avatar-2.png" alt="avatar-user" width="100%">
-                            </div>
-                            <div class="img-profil-mini">
-                                <img src="../assets/images/avatar/avatar-3.png" alt="avatar-user" width="100%">
-                            </div>
-                            <div class="img-profil-mini">
-                                <img src="../assets/images/avatar/avatar-4.png" alt="avatar-user" width="100%">
-                            </div>
-                            <div class="img-profil-mini">
-                                <img src="../assets/images/avatar/avatar-5.png" alt="avatar-user" width="100%">
-                            </div>
+                        <div class="col-12 col-lg-2">
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <a href="?p=job-list-view&idj=<?= $data_list_job['idj'] ?>" class="btn btn-b1">Detail...</a>
                         </div>
                     </div>
-                    <div class="row align-items-center justify-content-center">
+                    <!-- <div class="row align-items-center justify-content-center">
                         <div class="col-lg-4 offset-lg-8 text-center mt-3">
-                            <a href="?p=report-view&idj=<?= $data_list_job['idj'] ?>" class="btn btn-b1">See Report</a>
+                            <a href="?p=job-list-view&idj=</?= $data_list_job['idj'] ?>" class="btn btn-b1">Detail...</a>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
             <!-- Card-End::Content -->
             <hr>
         <?php endwhile; ?>
+
     </div>
+
     <!-- End::Card -->
 </div>
 <!-- div::content -->

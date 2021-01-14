@@ -2,9 +2,8 @@
 $cari_my_job = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc'  "));
 $my_job = mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc'");
 $my_list_job_ongoing = mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc' AND `status` = 'ongoing'");
-
 if (mysqli_num_rows($my_list_job_ongoing) < 1) {
-    $displayContentongoing = 'none';
+    $displayContent = 'none';
 } else {
     $idjob = $cari_my_job['idj'];
     $data_ajuan = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idjob'"));
@@ -16,13 +15,13 @@ if (mysqli_num_rows($my_list_job_ongoing) < 1) {
 }
 
 
-
 ?>
 <!-- div::content -->
 <div class="row d-content">
+
     <!-- Begin::Card -->
-    <div class="col-lg-12 page-content" style="display:<?= $displayContentongoing ?>">
-        <h3 class="text-center">Report</h3>
+    <div class="col-lg-12 page-content" style="display:<?= $displayContent ?>">
+        <h3 class="text-center">Project Ongoing</h3>
         <?php
         while ($data_list_job = mysqli_fetch_assoc($my_list_job_ongoing)) :
         ?>
@@ -83,7 +82,7 @@ if (mysqli_num_rows($my_list_job_ongoing) < 1) {
                     </div>
                     <div class="row align-items-center justify-content-center">
                         <div class="col-lg-4 offset-lg-8 text-center mt-3">
-                            <a href="?p=report-view&idj=<?= $data_list_job['idj'] ?>" class="btn btn-b1">See Report</a>
+                            <a href="?p=job-list-view&idj=<?= $data_list_job['idj'] ?>" class="btn btn-b1">Detail...</a>
                         </div>
                     </div>
 
@@ -92,7 +91,9 @@ if (mysqli_num_rows($my_list_job_ongoing) < 1) {
             <!-- Card-End::Content -->
             <hr>
         <?php endwhile; ?>
+
     </div>
+
     <!-- End::Card -->
 </div>
 <!-- div::content -->

@@ -41,15 +41,20 @@
                         </div>
                     </div>
                     <div class="row align-items-center justify-content-center">
-                        <div class="col-12 col-lg-4 text-center">
-                            <h5>Start Project</h5>
-                            <span>Monday, 21 December 2020</span>
-                            &nbsp;
-                            <h5>End Project</h5>
-                            <span>Monday, 28 December 2020</span>
+                        <div class="col-12 col-lg-6 offset-lg-1 text-center">
+                            <div class="row">
+                                <div class="col-12 col-lg-6 mb-4">
+                                    <h5>Start Project</h5>
+                                    <span>Monday, 21 December 2020</span>
+                                </div>
+                                <div class="col-12 col-lg-6 mb-4">
+                                    <h5>End Project</h5>
+                                    <span>Monday, 28 December 2020</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-lg-4 offset-lg-4 text-center mt-3">
-                            <a href="?p=job-tawaran-view&id-job=<?=$data_job['idj']?>" class="btn btn-b1">Detail...</a>
+                        <div class="col-lg-4 offset-lg-1 text-center">
+                            <a href="?p=job-tawaran-view&id-job=<?= $data_job['idj'] ?>" class="btn btn-b1">Detail...</a>
                         </div>
                     </div>
 

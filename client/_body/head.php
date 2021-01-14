@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="shortcut icon" href="../assets/images/icon/svg/icon-digawiai.svg" type="image/x-icon">
 
+
   <!-- Bootstrap Js -->
   <!-- <script src="../assets/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script> -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

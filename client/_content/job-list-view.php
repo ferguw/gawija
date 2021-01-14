@@ -6,8 +6,8 @@ $jumlah = mysqli_num_rows(mysqli_query($con, "SELECT * FROM job_req WHERE idj = 
 $max_limit = mysqli_fetch_assoc(mysqli_query($con, "SELECT SUM(numtalent) FROM job_req WHERE idj='$idj' "));
 $max_limit = implode($max_limit);
 
-$query_tawaran = mysqli_query($con, "SELECT * FROM tawaran WHERE `idj` = '$idj' ");
-$query_ajuan = mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idj'");
+// $query_tawaran = mysqli_query($con, "SELECT * FROM tawaran WHERE `idj` = '$idj' ");
+$query_ajuan = mysqli_query($con, "SELECT * FROM job_ongoing WHERE `idj` = '$idj'");
 
 //Mencari Job pada tabel job
 $data_job_search = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM job WHERE `idj` = '$idj' "));
@@ -27,6 +27,26 @@ $query_job_req = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idj' 
 //Mncari data requirement job (Value Job {jumlah talent, salary})
 $query_job_req_value = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idj' ");
 
+$job_status = $data_job_search['status'];
+
+switch ($job_status) {
+    case 'ongoing':
+        $displayContent = '';
+        break;
+    case 'pending':
+        $displayContent = 'none';
+        break;
+    case 'accept':
+        $displayContent = 'none';
+        break;
+
+    default:
+        # code...
+        break;
+}
+
+
+
 ?>
 <!-- div::content -->
 <div class="row d-content">
@@ -38,16 +58,8 @@ $query_job_req_value = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '
         <!-- Card-Begin::Content -->
         <div class="row">
             <div class="col-12 card-content">
-                <div class="row">
-                    <div class="col-12 col-lg-11 offset-lg-1">
-                        <p>
-                            <?= $data_job_search['deskripsi'] ?>
-                        </p>
-                        <hr>
-                    </div>
-                </div>
                 <div class="row align-items-center">
-                    <div class="col-12 col-lg-11 offset-lg-1 detail-job mt-2">
+                    <div class="col-12 col-lg-10 offset-lg-1 detail-job mt-2">
                         <ul>
                             <li><i class="material-icons">person_pin</i> &nbsp;Type
                                 <?php while ($data_job_req = mysqli_fetch_assoc($query_job_req)) {
@@ -69,6 +81,14 @@ $query_job_req_value = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '
 
                     </div>
                     <div class="col-12 col-lg-11 offset-1">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-10 offset-lg-1">
+                        <p>
+                            <?= $data_job_search['deskripsi'] ?>
+                        </p>
                         <hr>
                     </div>
                 </div>
@@ -99,29 +119,27 @@ $query_job_req_value = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '
 </div>
 <!-- div::content -->
 <!-- div::content -->
-<div class="row d-content">
+<div class="row d-content" style="display:<?= $displayContent ?>">
     <!-- Begin::Card -->
     <div class="col-lg-12 page-content">
         <!-- Card-Begin::Content -->
         <div class="row">
             <div class="col-12 card-content">
-                <div class="row">
-                    <div class="col-lg-2 offset-lg-9 text-center mb-3">
-                        <a href="?=p&accept-talent&" name="ajukan-diri" class="btn btn-b4 btnc-or-2">Accept Submissions</a>
-                    </div>
-                    <!-- <div class="col-lg-2 offset-lg-8 text-center mb-3">
+                <h4 class="text-center mb-5">List Talent Pada Project</h4>
+                <!-- <div class="row">
+                    <div class="col-lg-2 offset-lg-8 text-center mb-3">
                         <a href="#" name="ajukan-diri" class="btn btn-b4 btnc-or-2">Accept Submissions</a>
-                    </div> -->
-                    <!-- <div class="col-lg-2 text-center mb-3">
+                    </div>
+                    <div class="col-lg-2 text-center mb-3">
                         <a href="#" name="ajukan-diri" class="btn btn-b4 btnc-br-2">Talent Submission</a>
-                    </div> -->
-                </div>
+                    </div>
+                </div> -->
             </div>
         </div>
         <form method="post" action="">
             <div class="row justify-content-around">
                 <!-- class high untuk warna orange -->
-                <?php
+                <!-- </?php
                 while ($data_tawaran = mysqli_fetch_assoc($query_tawaran)) {
                     $idt = $data_tawaran['idt'];
                     $data_tawaran_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE `idt` = '$idt' "));
@@ -133,17 +151,16 @@ $query_job_req_value = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '
                                     <img src="../assets/images/avatar/avatar-1.png" class="img-talent" alt="Profil Img" width="100%">
                                 </div>
                                 <div class="card-ket text-center">
-                                    <h5><?= $data_tawaran_talent['name'] ?></h5>
-                                    <span><?= $data_tawaran_talent['type'] ?></span>
+                                    <h5></?= $data_tawaran_talent['name'] ?></h5>
+                                    <span></?= $data_tawaran_talent['type'] ?></span>
                                 </div>
                                 <div class="card-bottom" align="center">
-                                    <input type="checkbox" name="check[]" id="">
-                                    <a href="?p=job-list-view&idj=<?= $idj ?>&idt=<?= $idt ?>" onclick="fokus()" class="btn btn-card btnc-net">View Detail</a>
+                                    <a href="?p=job-list-view&idj=</?= $idj ?>&idt=</?= $idt ?>" onclick="fokus()" class="btn btn-card btnc-net">View Detail</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                <?php } ?>
+                </?php } ?> -->
 
                 <?php
                 while ($data_ajuan = mysqli_fetch_assoc($query_ajuan)) {
@@ -153,7 +170,7 @@ $query_job_req_value = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '
                     <!-- tanpa class high yang biasa untuk warna orange -->
                     <div class="col-lg-3 card-list">
                         <div class="row">
-                            <div class="col-12 d-img-list">
+                            <div class="col-12 d-img-list high">
                                 <div class="img-list">
                                     <img src="../assets/images/avatar/avatar-1.png" class="img-talent" alt="Profil Img" width="100%">
                                 </div>
@@ -162,7 +179,6 @@ $query_job_req_value = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '
                                     <span><?= $data_ajuan_talent['type'] ?></span>
                                 </div>
                                 <div class="card-bottom" align="center">
-                                    <input type="checkbox" name="check[]" id="">
                                     <a href="?p=job-list-view&idj=<?= $idj ?>&idt=<?= $idt ?>" onclick="fokus()" class=" btn btn-card btnc-net">View Detail</a>
                                 </div>
                             </div>

@@ -24,6 +24,8 @@ if (isset($_GET['log'])) {
 }
 
 
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -83,10 +85,6 @@ if (isset($_GET['log'])) {
                 <?php 
                 if ($p == 'job-add') {
                   echo "&nbsp;";
-                }elseif ($p == 'job-list-view') {
-                  if (isset($_GET['idt'])) {
-                    require_once("_body/detail-talent.php");
-                  }
                 }else{
                   require_once("_body/quick-info.php");
                 }

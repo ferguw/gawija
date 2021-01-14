@@ -29,23 +29,23 @@ $data_client = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM client WHERE
       </div>
       <div class="col-sm-12 col-md-12 col-lg-9 top-menu">
         <a href="?p=home"><span class="ket-menu">HOME</span></a>
-        <a href="#!"><span class="ket-menu">MY PROJECT</span></a>
-        <a href="#!"><span class="ket-menu">MESSAGE</span></a>
-        <a href="#!"><span class="ket-menu">UPDATE</span></a>
+        <a href="?p=job-list"><span class="ket-menu">MY PROJECT</span></a>
+        <a href="?p=talent-tawaran!"><span class="ket-menu">TALENT SUBMISSION</span></a>
+        <!-- <a href="#!"><span class="ket-menu">UPDATE</span></a> -->
       </div>
       <div class="col-sm-12 col-md-12 col-lg-9 bottom-menu fixed-bottom">
         <div class="row">
           <div class="col-3">
-            <a href="#!" class="material-icons icon-menu active">home</a>
+            <a href="?p=home" class="material-icons icon-menu active">home</a>
           </div>
           <div class="col-3">
-            <a href="#!" class="material-icons icon-menu">work</a>
+            <a href="?p=job-list" class="material-icons icon-menu">work</a>
           </div>
           <div class="col-3">
-            <a href="#!" class="material-icons icon-menu">message</a>
+            <a href="?p=talent-tawaran" class="material-icons icon-menu">group</a>
           </div>
           <div class="col-3">
-            <a href="#!" class="material-icons icon-menu">update</a>
+            <a href="?p=profil" class="material-icons icon-menu">person</a>
           </div>
         </div>
       </div>
