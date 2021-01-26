@@ -4,8 +4,8 @@ $data_job = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM job WHERE `idj`
 $query_job_req = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idj'");
 $query_job_req_value = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idj' ");
 
-$max_limit = mysqli_fetch_assoc(mysqli_query($con, "SELECT SUM(numtalent) FROM job_req WHERE idj='$idj' "));
-$max_limit = implode($max_limit);
+$max_limit = mysqli_fetch_assoc(mysqli_query($con, "SELECT SUM(numtalent) FROM job_req WHERE idj='$idj'"));
+$max_lim = implode($max_limit);
 
 $data_job_search = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM job WHERE `idj` = '$idj' "));
 $tgl_start_list_job = date_create($data_job_search['start']); //Add in Variable Date Fom SQL
@@ -142,7 +142,7 @@ $tgl_end_list_job =  date_format($tgl_end_list_job, "l, d F Y"); // Custom Date 
             <div class="row justify-content-center">
                 <!-- class high untuk warna orange -->
                 <table class="table table-hover">
-                    <thead class="thead-dark">
+                    <thead>
                         <tr align="center">
                             <th colspan="4">
                                 <h3>Talent yang menerima tawaran anda</h3>
@@ -269,7 +269,7 @@ $tgl_end_list_job =  date_format($tgl_end_list_job, "l, d F Y"); // Custom Date 
 <div class="row justify-content-center">
     <!-- class high untuk warna orange -->
     <table class="table table-hover">
-        <thead class="thead-dark">
+        <thead>
             <tr align="center">
                 <th colspan="4">
                     <h3>Talent yang mengajukan diri</h3>
@@ -404,7 +404,7 @@ $tgl_end_list_job =  date_format($tgl_end_list_job, "l, d F Y"); // Custom Date 
 </div>
 
 <script>
-    var limit = <?= $max_limit ?>;
+    var limit = <?= $max_lim ?>;
     $("input:checkbox").click(function() {
         var bol = $("input:checkbox:checked").length >= limit;
         $("input:checkbox").not(":checked").attr("disabled", bol);

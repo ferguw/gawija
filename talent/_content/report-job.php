@@ -19,7 +19,7 @@ $query_job_req = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idj' 
 //Mncari data requirement job (Value Job {jumlah talent, salary})
 $query_job_req_value = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idj' ");
 
-$cari_report = mysqli_query($con, "SELECT * FROM `report` WHERE `idt`='$idt'");
+$cari_report = mysqli_query($con, "SELECT * FROM `report` WHERE `idj`='$idj' AND `idt`='$idt'");
 
 
 
@@ -110,7 +110,7 @@ $cari_report = mysqli_query($con, "SELECT * FROM `report` WHERE `idt`='$idt'");
     <div class="col-lg-12 page-content">
         <div class="row">
             <div class="col-8 col-lg-2 offset-4 offset-lg-10">
-                <a href="?p=report-add&idj=<?=$idj?>" class="btn btn-b1-3"><i class="material-icons iconC">add</i> Add New Report</a>
+                <a href="?p=report-add&idj=<?= $idj ?>" class="btn btn-b1-3"><i class="material-icons iconC">add</i> Add New Report</a>
             </div>
         </div>
     </div>
@@ -145,7 +145,17 @@ $cari_report = mysqli_query($con, "SELECT * FROM `report` WHERE `idt`='$idt'");
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <?= $data_report['desk_rp'] ?>
+                                                <table width="100%" style="text-align: left;">
+                                                    <tr>
+                                                        <td>
+                                                            <p><?= $data_report['desk_rp'] ?></p>
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <td><img src="../assets/images/report/<?= $data_report['photo'] ?>" width="300px" alt=""></td>
+                                                    </tr>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>

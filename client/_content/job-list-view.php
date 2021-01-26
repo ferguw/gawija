@@ -3,8 +3,6 @@
 $idj = $_GET["idj"];
 $jumlah = mysqli_num_rows(mysqli_query($con, "SELECT * FROM job_req WHERE idj = '$idj'"));
 
-$max_limit = mysqli_fetch_assoc(mysqli_query($con, "SELECT SUM(numtalent) FROM job_req WHERE idj='$idj' "));
-$max_limit = implode($max_limit);
 
 // $query_tawaran = mysqli_query($con, "SELECT * FROM tawaran WHERE `idj` = '$idj' ");
 $query_ajuan = mysqli_query($con, "SELECT * FROM job_ongoing WHERE `idj` = '$idj'");
@@ -126,41 +124,12 @@ switch ($job_status) {
         <div class="row">
             <div class="col-12 card-content">
                 <h4 class="text-center mb-5">List Talent Pada Project</h4>
-                <!-- <div class="row">
-                    <div class="col-lg-2 offset-lg-8 text-center mb-3">
-                        <a href="#" name="ajukan-diri" class="btn btn-b4 btnc-or-2">Accept Submissions</a>
-                    </div>
-                    <div class="col-lg-2 text-center mb-3">
-                        <a href="#" name="ajukan-diri" class="btn btn-b4 btnc-br-2">Talent Submission</a>
-                    </div>
-                </div> -->
+
             </div>
         </div>
         <form method="post" action="">
             <div class="row justify-content-around">
-                <!-- class high untuk warna orange -->
-                <!-- </?php
-                while ($data_tawaran = mysqli_fetch_assoc($query_tawaran)) {
-                    $idt = $data_tawaran['idt'];
-                    $data_tawaran_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE `idt` = '$idt' "));
-                ?>
-                    <div class="col-lg-3 card-list">
-                        <div class="row">
-                            <div class="col-12 d-img-list high">
-                                <div class="img-list">
-                                    <img src="../assets/images/avatar/avatar-1.png" class="img-talent" alt="Profil Img" width="100%">
-                                </div>
-                                <div class="card-ket text-center">
-                                    <h5></?= $data_tawaran_talent['name'] ?></h5>
-                                    <span></?= $data_tawaran_talent['type'] ?></span>
-                                </div>
-                                <div class="card-bottom" align="center">
-                                    <a href="?p=job-list-view&idj=</?= $idj ?>&idt=</?= $idt ?>" onclick="fokus()" class="btn btn-card btnc-net">View Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </?php } ?> -->
+
 
                 <?php
                 while ($data_ajuan = mysqli_fetch_assoc($query_ajuan)) {
@@ -179,7 +148,94 @@ switch ($job_status) {
                                     <span><?= $data_ajuan_talent['type'] ?></span>
                                 </div>
                                 <div class="card-bottom" align="center">
-                                    <a href="?p=job-list-view&idj=<?= $idj ?>&idt=<?= $idt ?>" onclick="fokus()" class=" btn btn-card btnc-net">View Detail</a>
+                                    <!-- <a href="?p=job-list-view&idj=</?= $idj ?>&idt=</?= $idt ?>" onclick="fokus()" class=" btn btn-card btnc-net">View Detail</a> -->
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-card btnc-net" data-toggle="modal" data-target="#exampleModal<?= $data_ajuan_talent['idt'] ?>">
+                                        View Detail
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal<?= $data_ajuan_talent['idt'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Talent Detail</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <table class="table table-hover">
+                                                        <tr>
+                                                            <td width="30%">Name</td>
+                                                            <td>:</td>
+                                                            <td><?= $data_ajuan_talent['name'] ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Gender</td>
+                                                            <td>:</td>
+                                                            <td><?= $data_ajuan_talent['gender'] ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Komunikasi</td>
+                                                            <td>:</td>
+                                                            <td><?= $data_ajuan_talent['kmp_kom'] ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Perusasif</td>
+                                                            <td>:</td>
+                                                            <td><?= $data_ajuan_talent['kmp_persu'] ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Tinggi</td>
+                                                            <td>:</td>
+                                                            <td><?= $data_ajuan_talent['tb'] ?> CM</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Berat</td>
+                                                            <td>:</td>
+                                                            <td><?= $data_ajuan_talent['bb'] ?> Kg</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Rambut</td>
+                                                            <td>:</td>
+                                                            <td><?= $data_ajuan_talent['tipe_rambut'] ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Baju</td>
+                                                            <td>:</td>
+                                                            <td><?= $data_ajuan_talent['uk_baju'] ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Sepatu</td>
+                                                            <td>:</td>
+                                                            <td><?= $data_ajuan_talent['uk_sepatu'] ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Menggunakan Seragam Perusahaan</td>
+                                                            <td>:</td>
+                                                            <td><?= $data_ajuan_talent['seragam'] ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Bekerja Malam Hari</td>
+                                                            <td>:</td>
+                                                            <td><?= $data_ajuan_talent['malam'] ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Luar Kota</td>
+                                                            <td>:</td>
+                                                            <td><?= $data_ajuan_talent['luar_kota'] ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Sistem Kontrak</td>
+                                                            <td>:</td>
+                                                            <td><?= $data_ajuan_talent['kontrak'] ?></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -193,14 +249,3 @@ switch ($job_status) {
     <!-- End::Card -->
 </div>
 <!-- div::content -->
-<script>
-    var limit = <?= $max_limit ?>;
-    $("input:checkbox").click(function() {
-        var bol = $("input:checkbox:checked").length >= limit;
-        $("input:checkbox").not(":checked").attr("disabled", bol);
-    });
-
-    function fokus() {
-        document.getElementById("biodata").focus();
-    }
-</script>

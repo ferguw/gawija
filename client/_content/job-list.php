@@ -193,7 +193,7 @@ if (mysqli_num_rows($my_list_job_accept) < 1) {
             <hr>
         <?php endwhile; ?>
         <div class="mx-auto col-lg-3 text-center mt-2">
-            <a href="?p=job-list-pending" class="btn btn-b2">More...</a>
+            <a href="?p=job-list-accept" class="btn btn-b2">More...</a>
         </div>
 
     </div>

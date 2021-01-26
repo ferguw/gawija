@@ -11,7 +11,8 @@
         </p>
 
         <?php
-        $query_tawaran = mysqli_query($con, "SELECT * FROM tawaran WHERE `idt` = '$idc' ");
+        // $query_tawaran = mysqli_query($con, "SELECT * FROM ajuan WHERE `idt` = '$idc' ");
+        $query_tawaran = mysqli_query($con, "SELECT * FROM job WHERE `idc` = '$idc' AND `status`='accept' ");
         while ($data_tawaran = mysqli_fetch_assoc($query_tawaran)) {
             $idj = $data_tawaran['idj'];
             $data_job = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM job WHERE `idj` = '$idj' "));
