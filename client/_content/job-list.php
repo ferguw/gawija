@@ -28,7 +28,7 @@ if (mysqli_num_rows($my_list_job_accept) < 1) {
 
     $query_job_requirement = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idjob' ");
 }
-if (mysqli_num_rows($my_list_job_accept) < 1) {
+if (mysqli_num_rows($my_list_job_pending) < 1) {
     $displayContentpending = 'none';
 } else {
     $idjob = $cari_my_job['idj'];

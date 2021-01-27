@@ -43,8 +43,6 @@ if (isset($_POST['submit'])) {
 
     $desk_rp = $_POST["desk_rp"];
     $query = mysqli_query($con, "INSERT INTO `report`(`idj`, `idt`, `tgl`, `desk_rp`, `photo`) VALUES ('$idj','$idt','$date2','$desk_rp','$newname')");
-    // header("location:");
-    echo "<script>window.location.replace('?p=report-job&id-job=$idj');</script>";
 }
 ?>
 <div class="row d-content">

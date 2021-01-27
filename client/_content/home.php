@@ -1,35 +1,46 @@
 <?php
-$cari_my_job = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc'  "));
-$my_list_job = mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc'");
+$cari_my_job = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc' "));
+$my_list_job = mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc' AND `status`='accept'");
 
 if (mysqli_num_rows($my_list_job) < 1) {
     $displayContent = 'none';
+    $displayContentnothing = '';
 } else {
     $displayContent = '';
+    $displayContentnothing = 'none';
     $idjob = $cari_my_job['idj'];
-    $data_ajuan = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idjob'"));
-    $id_talent_ajuan = $data_ajuan['idt'];
+    $data_ajuan1 = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idjob'"));
+    $id_talent_ajuan = $data_ajuan1['idt'];
 
-    $data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE `idt` = '$id_talent_ajuan'  "));
-
+    
     $query_job_requirement = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idjob' ");
 }
 
+$ajuan = mysqli_query($con, "SELECT * FROM ajuan WHERE `idj`='$idjob'");
+
+if (mysqli_num_rows($ajuan) < 1) {
+    $displayContenttalent = 'none';
+}else{
+    $displayContenttalent = '';
+    $data_ajuan = mysqli_fetch_assoc($ajuan);
+    $data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE `idt` = '$id_talent_ajuan'  "));
+    
+}
 
 
 
 ?>
 
 <!-- div::content -->
-<div class="row d-content" style="display:<?= $displayContent ?>">
+<div class="row d-content" style="display:<?= $displayContenttalent ?>">
     <!-- Begin::Card -->
     <div class="col-lg-12 page-content">
         <h3>Talent yang mengajukan diri untuk Bergabung dengan Project Anda</h3>
-        <p>
+        <!-- <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error vero sit deleniti aspernatur eaque
             unde, accusantium obcaecati alias sunt veritatis minus odit nostrum, excepturi aperiam velit corporis,
             totam laboriosam ut.
-        </p>
+        </p> -->
 
         <!-- Card-Begin::Content -->
         <div class="row">
@@ -84,11 +95,11 @@ if (mysqli_num_rows($my_list_job) < 1) {
     <!-- Begin::Card -->
     <div class="col-lg-12 page-content">
         <h3>Project Anda yang dilihat oleh Semua Talent</h3>
-        <p>
+        <!-- <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error vero sit deleniti aspernatur eaque
             unde, accusantium obcaecati alias sunt veritatis minus odit nostrum, excepturi aperiam velit corporis,
             totam laboriosam ut.
-        </p>
+        </p> -->
         <?php
         while ($data_list_job = mysqli_fetch_assoc($my_list_job)) {
         ?>
@@ -162,5 +173,19 @@ if (mysqli_num_rows($my_list_job) < 1) {
     </div>
 
     <!-- End::Card -->
+</div>
+<!-- div::content -->
+<!-- div::content -->
+<div class="row d-content" style="display:<?= $displayContentnothing ?>">
+    <!-- Begin::Card -->
+    <div class="col-lg-12 page-content d-flex justify-content-center">
+        <div class="row">
+            <div >
+            <h3 align="center">Anda Belum Mempunyai Project, Yuk buat project baru!</h3><br><br>
+                <a href="?p=job-add" class="btn btn-b1-3"><i class="material-icons iconC">add</i> Add Project</a>
+            </div>
+        </div>
+    </div>
+    <!-- End Card -->
 </div>
 <!-- div::content -->

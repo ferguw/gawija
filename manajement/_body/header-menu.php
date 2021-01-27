@@ -36,16 +36,16 @@ $data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE
       <div class="col-sm-12 col-md-12 col-lg-9 bottom-menu fixed-bottom">
         <div class="row">
           <div class="col-3">
-            <a href="?p=home" class="material-icons icon-menu active">home</a>
+            <a href="#!" class="material-icons icon-menu active">home</a>
           </div>
           <div class="col-3">
-            <a href="?p=job-list" class="material-icons icon-menu">work</a>
+            <a href="#!" class="material-icons icon-menu">work</a>
           </div>
           <div class="col-3">
-            <a href="?p=report" class="material-icons icon-menu">chat</a>
+            <a href="#!" class="material-icons icon-menu">message</a>
           </div>
           <div class="col-3">
-            <a href="#!" class="material-icons icon-menu">person</a>
+            <a href="#!" class="material-icons icon-menu">update</a>
           </div>
         </div>
       </div>

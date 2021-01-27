@@ -3,12 +3,12 @@
     <!-- Begin::Card -->
     <div class="col-lg-12 page-content">
         <h2 class="text-center mb-5">TALENT SUBMISSION</h2>
-        <h3>Talent Yang Tertarik Dengan Project Anda</h3>
+        <!-- <h3>Talent Yang Tertarik Dengan Project Anda</h3>
         <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error vero sit deleniti aspernatur eaque
             unde, accusantium obcaecati alias sunt veritatis minus odit nostrum, excepturi aperiam velit corporis,
             totam laboriosam ut.
-        </p>
+        </p> -->
 
         <?php
         // $query_tawaran = mysqli_query($con, "SELECT * FROM ajuan WHERE `idt` = '$idc' ");

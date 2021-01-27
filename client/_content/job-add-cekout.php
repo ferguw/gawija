@@ -24,8 +24,8 @@ if (isset($_POST['add-pro'])) {
         $city = $_GET["city"];
         $workD = $_GET['workD'];
         $date =  explode("-", $_GET['date-proj']);
-        $dateStart = date("yy-m-d", strtotime($date[0]));
-        $dateEnd = date("yy-m-d", strtotime($date[1]));
+        $dateStart = date("Y-m-d", strtotime($date[0]));
+        $dateEnd = date("Y-m-d", strtotime($date[1]));
 
         mysqli_query($con, "INSERT INTO `job`(`idj`, `idc`, `comp`, `judul`, `deskripsi`, `start`, `end`, `address`, `city`, `workday`, `total_salary`, `fee_gawiae`, `grandtotal`, `pajak`, `status`) VALUES (NULL, '$idc', '$comp','$projN', '$projD', '$dateStart', '$dateEnd', '$address', '$city', '$workD', '$totalSalary', '$feeGawija', '$grandT', '$ppn', 'pending')");
 

@@ -3,12 +3,12 @@
     <!-- Begin::Card -->
     <div class="col-lg-12 page-content">
         <h2 class="text-center mb-5">JOB SUBMISSION</h2>
-            <!-- <h3>Tawaran Project dari Klien yang Tertarik Dengan Anda</h3>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error vero sit deleniti aspernatur eaque
-                unde, accusantium obcaecati alias sunt veritatis minus odit nostrum, excepturi aperiam velit corporis,
-                totam laboriosam ut.
-            </p> -->
+        <h3>Tawaran Project dari Klien yang Tertarik Dengan Anda</h3>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error vero sit deleniti aspernatur eaque
+            unde, accusantium obcaecati alias sunt veritatis minus odit nostrum, excepturi aperiam velit corporis,
+            totam laboriosam ut.
+        </p>
 
         <?php
         $query_tawaran = mysqli_query($con, "SELECT * FROM tawaran WHERE `idt` = '$idt' ");
@@ -64,11 +64,11 @@
         <?php } ?>
 
         <!-- Navigasi Detail -->
-        <!-- <div class="row justify-content-center">
+        <div class="row justify-content-center">
             <div class="col-lg-3 text-center">
                 <a href="#!" class="btn btn-b2">Load More...</a>
             </div>
-        </div> -->
+        </div>
         <!-- Navigasi Detail -->
     </div>
 
