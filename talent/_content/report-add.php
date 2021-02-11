@@ -19,10 +19,10 @@ function compress($source, $destination, $quality)
 
 if (isset($_POST['submit'])) {
 
-    //create folder upload
+    // //create folder upload
     $tempdir = "../assets/images/report/";
-    if (!file_exists($tempdir)) mkdir($tempdir, 0755);
-
+    // if (!file_exists($tempdir)) mkdir($tempdir, 0755);
+    
     //target file
     $target_path = $tempdir . basename($_FILES['uploadimg']['name']);
 

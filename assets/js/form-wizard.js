@@ -12,11 +12,6 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    // var nextBtn = document.getElementById("nextBtn");
-    // nextBtn.remove();
-    // var html = '';
-    //   html+='<button type="submit" id="nextBtn">Cekout</button>';
-    //   $('#BtnSend').append(html);
     document.getElementById("nextBtn").innerHTML = "Cekout"
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";

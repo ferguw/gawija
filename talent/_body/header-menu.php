@@ -12,7 +12,7 @@ $data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE
             <div class="row align-items-center justify-content-start">
               <div class="col-3 text-left">
                 <div class="img-profil">
-                  <a href="?p=profil"><img src="../assets/images/avatar/avatar-1.png" alt="avatar-user" width="100%"></a>
+                  <a href="?p=profil"><img src="../assets/images/talent/<?=$data_talent['closeup']?>" alt="avatar-user" width="100%"></a>
                 </div>
               </div>
               <div class="col-9 text-left" id="username">
@@ -28,10 +28,10 @@ $data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE
         </div>
       </div>
       <div class="col-sm-12 col-md-12 col-lg-9 top-menu">
-        <a href="?p=home"><span class="ket-menu">HOME</span></a>
-        <a href="#!"><span class="ket-menu">MY PROJECT</span></a>
-        <a href="#!"><span class="ket-menu">MESSAGE</span></a>
-        <a href="#!"><span class="ket-menu">UPDATE</span></a>
+        <a href="?p=home" hidden><span class="ket-menu">HOME</span></a>
+        <a href="#!" hidden><span class="ket-menu">MY PROJECT</span></a>
+        <a href="#!" hidden><span class="ket-menu">MESSAGE</span></a>
+        <a href="#!" hidden><span class="ket-menu">UPDATE</span></a>
       </div>
       <div class="col-sm-12 col-md-12 col-lg-9 bottom-menu fixed-bottom">
         <div class="row">
@@ -59,7 +59,7 @@ $data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE
               </div>
               <div class="col-3 text-right">
                 <div class="img-profil">
-                  <a href="?p=profil" onclick="sidebar()"><img src="../assets/images/avatar/avatar-1.png" alt="avatar-user" width="100%"></a>
+                  <a href="?p=profil" onclick="sidebar()"><img src="../assets/images/talent/<?=$data_talent['closeup']?>" alt="avatar-user" width="100%"></a>
                 </div>
               </div>
             </div>

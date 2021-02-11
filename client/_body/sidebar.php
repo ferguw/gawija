@@ -21,7 +21,7 @@
             <div id="link-1" class="menu-link "><a href="?p=home" class="menu-tag">Dashboard</a></div>
             <div id="link-2" class="menu-link "><a href="?p=job-list" class="menu-tag">Job List</a></div>
             <div id="link-3" class="menu-link "><a href="?p=talent-tawaran" class="menu-tag">Talent Submission</a></div>
-            <div id="link-4" class="menu-link "><a href="?p=report-list" class="menu-tag">Report</a></div>
+            <div id="link-4" class="menu-link "><a href="?p=report-list" class="menu-tag">Job Ongoing</a></div>
             <div id="link-bottom" class="menu-link"><a href="#!" class="menu-tag">&nbsp;</a></div>
         </div>
     </div>

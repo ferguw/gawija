@@ -43,7 +43,7 @@ if (mysqli_num_rows($my_list_job_ongoing) < 1) {
                     <div class="row">
                         <div class="col-12 col-lg-11 offset-lg-1">
                             <p>
-                                <?php echo substr($data_list_job['deskripsi'], 0, 250); ?>
+                                <?php echo substr($data_list_job['deskripsi'], 0, 150); ?>
                             </p>
                             <hr>
                         </div>

@@ -8,11 +8,11 @@
     </div>
     <div class="row">
         <div class="col-12 text-center d-logo">
-        <a href="index">
-            <div class="img-logo-template">
-                <img src="../assets/images/icon/logo/gawija logo.svg" class="logo" alt="logo" width="100%">
-            </div>
-        </a>
+            <a href="index">
+                <div class="img-logo-template">
+                    <img src="../assets/images/icon/logo/gawija logo.svg" class="logo" alt="logo" width="100%">
+                </div>
+            </a>
         </div>
     </div>
     <div class="row menu justify-content-end align-items-center">
@@ -20,8 +20,9 @@
             <div id="link-top" class="menu-link top-link"><a href="#!" class="menu-tag">&nbsp;</a></div>
             <div id="link-1" class="menu-link "><a href="?p=home" class="menu-tag">Dashboard</a></div>
             <div id="link-2" class="menu-link "><a href="?p=job-list" class="menu-tag">Job List</a></div>
-            <div id="link-3" class="menu-link "><a href="?p=job-tawaran" class="menu-tag">Job Submission</a></div>
-            <div id="link-4" class="menu-link "><a href="?p=report" class="menu-tag">Report</a></div>
+            <div id="link-3" class="menu-link "><a href="?p=job-tawaran" class="menu-tag">Job Offer</a></div>
+            <div id="link-4" class="menu-link "><a href="?p=report" class="menu-tag">Job Ongoing</a></div>
+            <div id="link-5" class="menu-link "><a href="?p=saldo" class="menu-tag">Saldo</a></div>
             <div id="link-bottom" class="menu-link"><a href="#!" class="menu-tag">&nbsp;</a></div>
         </div>
     </div>

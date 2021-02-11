@@ -1,12 +1,6 @@
 <?php
 $idj = $_GET["idj"];
 
-$timezone = "Asia/Makassar";
-date_default_timezone_set($timezone);
-$time = date("H:i a");
-$date = date("l, d F Y");
-$today = strtotime(date('Y-m-d'));
-
 $my_list_job_ongoing = mysqli_query($con, "SELECT * FROM `job` WHERE `idj` = '$idj'");
 $talent_list = mysqli_query($con, "SELECT * FROM job_ongoing WHERE `idj`='$idj' ");
 

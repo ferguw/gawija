@@ -28,9 +28,9 @@ $data_client = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM client WHERE
         </div>
       </div>
       <div class="col-sm-12 col-md-12 col-lg-9 top-menu">
-        <a href="?p=home"><span class="ket-menu">HOME</span></a>
-        <a href="?p=job-list"><span class="ket-menu">MY PROJECT</span></a>
-        <a href="?p=talent-tawaran!"><span class="ket-menu">TALENT SUBMISSION</span></a>
+        <a href="?p=home" hidden><span class="ket-menu">HOME</span></a>
+        <a href="?p=job-list" hidden><span class="ket-menu">MY PROJECT</span></a>
+        <a href="?p=talent-tawaran!" hidden><span class="ket-menu">TALENT SUBMISSION</span></a>
         <!-- <a href="#!"><span class="ket-menu">UPDATE</span></a> -->
       </div>
       <div class="col-sm-12 col-md-12 col-lg-9 bottom-menu fixed-bottom">

@@ -42,6 +42,12 @@ function sidebar_move(menu_link) { // Sidebar Ketika Berpindah Halaman
         var link4 = document.getElementById("link-4");
         link4.classList.add("menu-link");
         link4.classList.add("close-all");
+
+        document.getElementById('link-5').removeAttribute('class');
+        var link4 = document.getElementById("link-5");
+        link4.classList.add("menu-link");
+        link4.classList.add("close-all");
+        
     }else if (linke == 'job-list') {
         
         document.getElementById('link-1').removeAttribute('class');
@@ -63,6 +69,11 @@ function sidebar_move(menu_link) { // Sidebar Ketika Berpindah Halaman
         var link4 = document.getElementById("link-4");
         link4.classList.add("menu-link");
         link4.classList.add("close-all");
+
+        document.getElementById('link-5').removeAttribute('class');
+        var link5 = document.getElementById("link-5");
+        link5.classList.add("menu-link");
+        link5.classList.add("close-all");
         
     }else if (linke == 'job-tawaran') {
         
@@ -85,6 +96,11 @@ function sidebar_move(menu_link) { // Sidebar Ketika Berpindah Halaman
         var link4 = document.getElementById("link-4");
         link4.classList.add("menu-link");
         link4.classList.add("close-down");
+
+        document.getElementById('link-5').removeAttribute('class');
+        var link5 = document.getElementById("link-5");
+        link5.classList.add("menu-link");
+        link5.classList.add("close-all");
         
     }else if (linke == 'report') {
         
@@ -107,12 +123,47 @@ function sidebar_move(menu_link) { // Sidebar Ketika Berpindah Halaman
         var link4 = document.getElementById("link-4");
         link4.classList.add("menu-link");
         link4.classList.add("active");
-        link4.classList.add("bottom-link");
+
         
+        document.getElementById('link-5').removeAttribute('class');
+        var link5 = document.getElementById("link-5");
+        link5.classList.add("menu-link");
+        link5.classList.add("close-down");
+    
+    }else if (linke == 'saldo') {
+        
+        document.getElementById('link-1').removeAttribute('class');
+        var link1 = document.getElementById("link-1");
+        link1.classList.add("menu-link");
+        link1.classList.add("close-all");
+            
+        document.getElementById('link-2').removeAttribute('class');
+        var link2 = document.getElementById("link-2");
+        link2.classList.add("menu-link");
+        link2.classList.add("close-all");
+
+        document.getElementById('link-3').removeAttribute('class');
+        var link3 = document.getElementById("link-3");
+        link3.classList.add("menu-link");
+        link3.classList.add("close-all");
+        
+        document.getElementById('link-4').removeAttribute('class');
+        var link4 = document.getElementById("link-4");
+        link4.classList.add("menu-link");
+        link4.classList.add("close-up");
+        // link4.classList.add("close-up");
+        
+        document.getElementById('link-5').removeAttribute('class');
+        var link5 = document.getElementById("link-5");
+        link5.classList.add("menu-link");
+        link5.classList.add("active");
+        // link4.classList.add("bottom-link");
+
         document.getElementById('link-bottom').removeAttribute('class');
         var linkDown = document.getElementById("link-bottom");
         linkDown.classList.add("menu-link");
         linkDown.classList.add("close-down");
+
     }else{
         // rusak()
     }

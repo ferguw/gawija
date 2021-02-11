@@ -4,6 +4,15 @@ session_start();
 $con = mysqli_connect("localhost",  "root", "", "gawija");
 // $con = mysqli_connect("45.130.231.51", "u1066805_gawija", "Uu4eZ6dsPp5E", "u1066805_gawija");
 
+
+// time and date
+  setlocale(LC_ALL, 'id_ID.utf8');
+  $timezone = "Asia/Makassar";
+  date_default_timezone_set($timezone);
+  $time = date("H:i a");
+  $date = date("l, d F Y");
+  $today = strtotime(date('Y-m-d'));
+
 if (isset($_GET['act'])) {
   if ($_GET['act'] == 'logout') {
     unset($_SESSION['id_client']);

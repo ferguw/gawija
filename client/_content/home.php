@@ -1,20 +1,17 @@
 <?php
 $cari_my_job = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc' "));
-$my_list_job = mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc' AND `status`='accept'");
+$my_list_job = mysqli_query($con, "SELECT * FROM `job` WHERE `idc` = '$idc'");
 
+$idjob = $cari_my_job['idj'];
 if (mysqli_num_rows($my_list_job) < 1) {
     $displayContent = 'none';
     $displayContentnothing = '';
 } else {
     $displayContent = '';
     $displayContentnothing = 'none';
-    $idjob = $cari_my_job['idj'];
-    $data_ajuan1 = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM ajuan WHERE `idj` = '$idjob'"));
-    $id_talent_ajuan = $data_ajuan1['idt'];
-
-    
-    $query_job_requirement = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idjob' ");
 }
+$query_job_requirement = mysqli_query($con, "SELECT * FROM job_req WHERE `idj` = '$idjob' ");
+
 
 $ajuan = mysqli_query($con, "SELECT * FROM ajuan WHERE `idj`='$idjob'");
 
@@ -23,6 +20,7 @@ if (mysqli_num_rows($ajuan) < 1) {
 }else{
     $displayContenttalent = '';
     $data_ajuan = mysqli_fetch_assoc($ajuan);
+    $id_talent_ajuan = $data_ajuan['idt'];
     $data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE `idt` = '$id_talent_ajuan'  "));
     
 }
@@ -64,9 +62,8 @@ if (mysqli_num_rows($ajuan) < 1) {
                                 <h5><?= $cari_my_job['judul'] ?></h5>
                                 <span>Requirement Job
                                     <?php
-                                    while ($data_job_requirement = mysqli_fetch_assoc($query_job_requirement)) {
+                                        $data_job_requirement = mysqli_fetch_assoc($query_job_requirement);
                                         echo ", " . $data_job_requirement['type'];
-                                    }
                                     ?>
                                 </span>
                             </div>
@@ -94,7 +91,7 @@ if (mysqli_num_rows($ajuan) < 1) {
 <div class="row d-content" style="display:<?= $displayContent ?>">
     <!-- Begin::Card -->
     <div class="col-lg-12 page-content">
-        <h3>Project Anda yang dilihat oleh Semua Talent</h3>
+        <h3 align="center">Project Anda</h3>
         <!-- <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error vero sit deleniti aspernatur eaque
             unde, accusantium obcaecati alias sunt veritatis minus odit nostrum, excepturi aperiam velit corporis,
@@ -121,7 +118,7 @@ if (mysqli_num_rows($ajuan) < 1) {
                     <div class="row">
                         <div class="col-12 col-lg-11 offset-lg-1">
                             <p>
-                                <?php echo substr($data_list_job['deskripsi'], 0, 250); ?>
+                                <?php echo substr($data_list_job['deskripsi'], 0, 150); ?>
                             </p>
                             <hr>
                         </div>
