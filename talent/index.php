@@ -9,6 +9,9 @@ if (isset($_GET['act'])) {
   if ($_GET['act'] == 'logout') {
     unset($_SESSION['id_talent']);
     header("location:index");
+  }elseif ($_GET['act'] == 'reset') {
+    unset($_SESSION['id_talent']);
+    header("location:index?log=forgot-password");
   }
 }
 

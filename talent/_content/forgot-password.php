@@ -4,16 +4,28 @@ error_reporting(0);
         // $_SESSION["id_talent"] = 1; //Contoh
         // header("Location:index");
         $email = mysqli_real_escape_string($con, $_POST["email"]);
-        $password = mysqli_real_escape_string($con, $_POST["password"]);
 
         $cek_user = mysqli_query($con, "SELECT * FROM talent WHERE email = '$email' ");
-        $data_user = mysqli_fetch_assoc($cek_user);
+        $data_talent = mysqli_fetch_assoc($cek_user);
+        $idt = $data_talent['idt'];
         
-        if ($data_user['email'] === $email AND password_verify($password, $data_user['password'])) {
-            $_SESSION["id_talent"] = $data_user['idt'];
+        if (mysqli_num_rows($cek_user) < 1) {
+            echo "<script>Swal.fire({icon: 'error',title: 'Oops...',text: 'Email yang anda masukkan tidak kami temukan'})</script>";
+        }else{
+            $string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789';
+            $shuffle1  = substr(str_shuffle($string), 0, 32);
+            $shuffle2  = substr(str_shuffle($string), 0, 32);
+            $mix = $shuffle1.$shuffle2;
+            mysqli_query($con, "UPDATE talent SET `reset_password` = '$mix' WHERE `idt` = '$idt';");
+            
+            $to       = 'ferrgun17@gmail.com';
+            $from = "admin@gawija.bmt-support.com";    
+            $headers = "From:" . $from;    
+            $subject  = 'Reset Password';
+            $message  = 'Selamat Datang, '.PHP_EOL. ' Password Anda akan direset silahkan klik link ini untuk melanjutkan gawija.test/talent/?log=forgot-password-process&id='.$idt.'&key='.$mix;
+            mail($to,$subject,$message, $headers);
             header("Location:index");
-        }else {
-            echo "<script>Swal.fire({icon: 'error',title: 'Oops...',text: 'Data yang anda masukkan tidak kami temukan'})</script>";
+            
         }
     }
 ?>
@@ -35,7 +47,8 @@ error_reporting(0);
                                 <img src="../assets/images/icon/logo/gawija logo.svg" alt="logo" width="100%">
                             </div>
                         </center>
-                        <h3 class="mt-3">Sign In Talent</h3>
+                        <h3 class="mt-3">Reset your password</h3>
+                        <p class="mt-5">Enter your user account's verified email address and we will send you a password reset link.</p>
                     </div>
                     <form action="" method="POST">
                         <div class="form-group">
@@ -43,21 +56,9 @@ error_reporting(0);
                             <input type="email" name="email" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Remember Me!</label>
-                        </div>
-                        <small><a href="?log=forgot-password">Forgot Password ?</a></small>
-                        <button type="submit" class="btn btn-b2 mt-4" name="login">Submit</button>
+                        <button type="submit" class="btn btn-b2 mt-3" name="login">Submit</button>
                     </form>
-                    <br>
-                    <small>Don't have <a href="?log=sign-up">Account Talent?</a></small>
-                    <br>
-                    <small>Login as <a href="../client">Client</a></small>
+                    
                 </div>
             </div>
         </div>

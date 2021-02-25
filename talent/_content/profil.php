@@ -713,7 +713,8 @@ function compress($source, $destination, $quality)
                                     </div>
                                 </div>
                             </div>
-                                <a href="?p=profil&s=edit" class="btn btn-b2 mt-3 col-2" style="display: <?= $picture ?>;">Edit</a>
+                                <a href="?act=reset" class="mt-3 col-2" style="display: <?= $picture ?>;">Reset Password</a><br>
+                                <a href="?p=profil&s=edit" class="mt-3 col-2" style="display: <?= $picture ?>;">Edit</a>
                             <!-- tab 5 end -->
                         </div>
                     </div>
