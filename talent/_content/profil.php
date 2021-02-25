@@ -1,13 +1,18 @@
 <?php
-error_reporting(0);
-$page = $_GET["s"];
+// error_reporting(0);
 
-if ($page == 'edit') {
-    $btn_edit = '';
-    $picture = 'none';
-}else {
+if (isset($_GET['s'])) { //jika ada paramater GET['s']
+    $page = $_GET["s"]; // then
+    if ($page == 'edit') {
+        $btn_edit = ''; //tampilkan btn EDIT
+        $picture = 'none';
+    }else { //False
+        $btn_edit = 'none';
+        $picture = '';
+    }
+}else{ //False
     $btn_edit = 'none';
-    $picture = '';
+        $picture = '';
 }
 
 
@@ -100,9 +105,12 @@ function compress($source, $destination, $quality)
         rename($tempdir . $filename_pasfoto, $tempdir . $newname_pasfoto);
         rename($tempdir . $filename_fullbody, $tempdir . $newname_fullbody);
 
-        mysqli_query($con, "UPDATE `talent` SET `name`='$nama',`username`='$username',`email`='$email',`no_ktp`='$ktp',`tpt_lahir`='$tpt_lahir',`tgl_lahir`='$tgl_lahir',`alamat`='$alamat',`phone`='$hp',`whatsapp`='$wa',`instagram`='$instagram',`tiktok`='$tiktok',`facebook`='$facebook',`kmp_kom`='$kem_kom',`kmp_persu`='$kem_per',`pendidikan`='$pend',`sts_pendidikan`='$sts_pend',`seragam`='$b_seragam',`malam`='$b_malam',`luar_kota`='$b_kota',`kontrak`='$b_kontrak',`nama_bank`='$bank',`no_rek`='$no_rek',`an_rek`='$an_rek',`closeup`='$newname_closeup',`pas_photo`='$newname_pasfoto',`full_body`='$newname_fullbody',`gender`='$gender',`tb`='$tb',`bb`='$bb',`tipe_rambut`='$tipe_rambut',`uk_baju`='$ukb',`uk_sepatu`='$uks' WHERE `idt`='$idt'");
-
-        echo "<script>window.location = '?p=profil';</script>";
+        $update_profil = mysqli_query($con, "UPDATE `talent` SET `name`='$nama',`username`='$username',`email`='$email',`no_ktp`='$ktp',`tpt_lahir`='$tpt_lahir',`tgl_lahir`='$tgl_lahir',`alamat`='$alamat',`phone`='$hp',`whatsapp`='$wa',`instagram`='$instagram',`tiktok`='$tiktok',`facebook`='$facebook',`kmp_kom`='$kem_kom',`kmp_persu`='$kem_per',`pendidikan`='$pend',`sts_pendidikan`='$sts_pend',`seragam`='$b_seragam',`malam`='$b_malam',`luar_kota`='$b_kota',`kontrak`='$b_kontrak',`nama_bank`='$bank',`no_rek`='$no_rek',`an_rek`='$an_rek',`closeup`='$newname_closeup',`pas_photo`='$newname_pasfoto',`full_body`='$newname_fullbody',`gender`='$gender',`tb`='$tb',`bb`='$bb',`tipe_rambut`='$tipe_rambut',`uk_baju`='$ukb',`uk_sepatu`='$uks' WHERE `idt`='$idt'");
+        if ($update_profil) {
+            echo "<script>window.location ='?p=profil';</script>";
+        }else{
+            echo "<script>alert('Failed')</script>";
+        }
     }
 ?>
 <!-- div::content -->

@@ -1,8 +1,8 @@
 <?php
 session_start();
 //Database
-$con = mysqli_connect("localhost",  "root", "", "gawija");
-// $con = mysqli_connect("45.130.231.51", "u1066805_gawija", "Uu4eZ6dsPp5E", "u1066805_gawija");
+// $con = mysqli_connect("localhost",  "root", "", "gawija");
+$con = mysqli_connect("45.130.231.51", "u1066805_gawija", "Uu4eZ6dsPp5E", "u1066805_gawija");
 
 
 // time and date
