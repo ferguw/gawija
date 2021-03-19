@@ -18,7 +18,7 @@
     <div class="row menu justify-content-end align-items-center">
         <div class="col-12 mn">
             <div id="link-top" class="menu-link top-link"><a href="#!" class="menu-tag">&nbsp;</a></div>
-            <div id="link-1" class="menu-link "><a href="?p=home" class="menu-tag">Dashboard</a></div>
+            <div id="link-1" class="menu-link "><a href="?p=home" class="menu-tag">Home</a></div>
             <div id="link-2" class="menu-link "><a href="?p=job-list" class="menu-tag">Job List</a></div>
             <div id="link-3" class="menu-link "><a href="?p=job-tawaran" class="menu-tag">Job Offer</a></div>
             <div id="link-4" class="menu-link "><a href="?p=report" class="menu-tag">Job Ongoing</a></div>

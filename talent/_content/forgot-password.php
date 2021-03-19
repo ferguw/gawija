@@ -35,8 +35,8 @@ error_reporting(0);
     <div class="row page-login align-items-center">
         <div class="col-12 col-sm-12 col-md-12 col-lg-7 img-login text-center">
             <img src="../assets/images/bg/svg/login.svg" alt="login-bg" width="80%">
-            <h2 class=" mt-5">Jadi Freelancer yang terbaik untuk Pekerjaan apa saja, Online</h2>
-            <p class="">Jutaan orang menggunakan Platform Gawija untuk mewujudkan Impian mereka menjadi kenyataan </p>
+            <h2 class=" mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+            <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam quae id, vel vero quidem mollitia aperiam obcaecati recusandae eligendi temporibus assumenda deserunt soluta! Veniam quae qui voluptatibus reprehenderit provident magnam harum vitae?</p>
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-5 div-form-login">
             <div class="row">
@@ -57,6 +57,7 @@ error_reporting(0);
                                 aria-describedby="emailHelp">
                         </div>
                         <button type="submit" class="btn btn-b2 mt-3" name="login">Submit</button>
+                        <small>I have <a href="?log=sign-in">Account</a></small>
                     </form>
                     
                 </div>

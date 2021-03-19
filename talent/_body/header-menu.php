@@ -1,6 +1,11 @@
 <?php
 $idt = $_SESSION["id_talent"];
 $data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE `idt` = '$idt' "));
+if ($data_talent['closeup'] == '') {
+  $profil = 'empty.jpg';
+}else{
+  $profil = $data_talent['closeup'];
+}
 ?>
 <!-- Begin::header-menu -->
 <div class="row header">
@@ -12,7 +17,7 @@ $data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE
             <div class="row align-items-center justify-content-start">
               <div class="col-3 text-left">
                 <div class="img-profil">
-                  <a href="?p=profil"><img src="../assets/images/talent/<?=$data_talent['closeup']?>" alt="avatar-user" width="100%"></a>
+                  <a href="?p=profil"><img src="../assets/images/talent/<?=$profil?>" alt="avatar-user" width="100%"></a>
                 </div>
               </div>
               <div class="col-9 text-left" id="username">
@@ -59,7 +64,7 @@ $data_talent = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM talent WHERE
               </div>
               <div class="col-3 text-right">
                 <div class="img-profil">
-                  <a href="?p=profil" onclick="sidebar()"><img src="../assets/images/talent/<?=$data_talent['closeup']?>" alt="avatar-user" width="100%"></a>
+                  <a href="?p=profil" onclick="sidebar()"><img src="../assets/images/talent/<?=$profil?>" alt="avatar-user" width="100%"></a>
                 </div>
               </div>
             </div>

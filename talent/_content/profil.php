@@ -120,7 +120,7 @@ function compress($source, $destination, $quality)
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    <h1>Profile</h1>
+                    <h1 class="txt-1-judul">Profile</h1>
                 </div>
             </div>
             <div class="row offset-md-1">
@@ -137,27 +137,27 @@ function compress($source, $destination, $quality)
                         <input type="file">
                     </div>
                 </div> -->
-                    <div class="col-lg-12 mt-4">
+                    <div class="col-lg-12 mt-4 div-form-login card-login wizard-profil">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                <a class="nav-link active txt-2-judul" id="home-tab" data-toggle="tab" href="#home" role="tab"
                                     aria-controls="home" aria-selected="true">Profil</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                                <a class="nav-link txt-2-judul" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
                                     id="contact-1" aria-controls="contact" aria-selected="false">Contact & Social
                                     Media</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="ability-tab" data-toggle="tab" href="#ability" role="tab"
+                                <a class="nav-link txt-2-judul" id="ability-tab" data-toggle="tab" href="#ability" role="tab"
                                     aria-controls="ability" aria-selected="false">Ability & Experience</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="bank-tab" data-toggle="tab" href="#bank" role="tab"
+                                <a class="nav-link txt-2-judul" id="bank-tab" data-toggle="tab" href="#bank" role="tab"
                                     aria-controls="bank" aria-selected="false">Bank Account</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="picture-tab" data-toggle="tab" href="#picture" role="tab"
+                                <a class="nav-link txt-2-judul" id="picture-tab" data-toggle="tab" href="#picture" role="tab"
                                     aria-controls="picture" aria-selected="false">Upload Picture</a>
                             </li>
                         </ul>
@@ -336,7 +336,7 @@ function compress($source, $destination, $quality)
                                     </div>
                                 </div>
                                 <!-- <button type="submit" name="submit-1"  class="btn btn-b2 mt-3 col-2 offset-md-10">Save</button> -->
-                                <a style="display:<?= $btn_edit?>" class="btn btn-b2 mt-3 col-2 offset-md-10 nav-link"
+                                <a style="display:<?= $btn_edit?>" class="btn btn-b2 mt-3 btn-b2 col-2 btn-b2 offset-md-10 nav-link"
                                     id="contact-tab" data-toggle="tab" href="#contact" role="tab"
                                     aria-controls="contact" aria-selected="false">Next</a>
 
@@ -377,7 +377,7 @@ function compress($source, $destination, $quality)
                                         value="<?= $data_talent['facebook']?>">
                                 </div>
                                 <!-- <button type="submit" name="submit" class="btn btn-b2 mt-3 col-2 offset-md-10">Save</button> -->
-                                <a style="display:<?= $btn_edit?>" class="btn btn-b2 mt-3 col-2 offset-md-10 nav-link"
+                                <a style="display:<?= $btn_edit?>" class="btn btn-b2 mt-3 col-2 btn-b2 offset-md-10 nav-link"
                                     id="ability-tab" data-toggle="tab" href="#ability" role="tab"
                                     aria-controls="ability" aria-selected="false">Next</a>
 
@@ -630,7 +630,7 @@ function compress($source, $destination, $quality)
                                     </datalist>
                                 </div>
                                 <!-- <button type="submit" name="submit-3" class="btn btn-b2 mt-3 col-2 offset-md-10">Save</button> -->
-                                <a style="display:<?= $btn_edit?>" class="btn btn-b2 mt-3 col-2 offset-md-10 nav-link"
+                                <a style="display:<?= $btn_edit?>" class="btn mt-3 col-2 btn-b2 offset-md-10 nav-link"
                                     id="bank-tab" data-toggle="tab" href="#bank" role="tab" aria-controls="bank"
                                     aria-selected="false">Next</a>
 
@@ -682,7 +682,7 @@ function compress($source, $destination, $quality)
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
-                                <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                                <a class="carousel-control-next btn-b2" href="#carouselExampleInterval" role="button" data-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
@@ -721,8 +721,8 @@ function compress($source, $destination, $quality)
                                     </div>
                                 </div>
                             </div>
-                                <a href="?act=reset" class="mt-3 col-2" style="display: <?= $picture ?>;">Reset Password</a><br>
-                                <a href="?p=profil&s=edit" class="mt-3 col-2" style="display: <?= $picture ?>;">Edit</a>
+                                <a href="?act=reset" class="btn btn-b1-2 active mt-3 col-2" style="display: <?= $picture ?>;">Reset Password</a>
+                                <a href="?p=profil&s=edit" class="btn mt-3 col-2 btn-b1 active" style="display: <?= $picture ?>;">Edit</a>
                             <!-- tab 5 end -->
                         </div>
                     </div>

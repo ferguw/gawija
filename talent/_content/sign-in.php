@@ -21,11 +21,6 @@ error_reporting(0);
 
 <div class="container-fluid">
     <div class="row page-login align-items-center">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-7 img-login text-center">
-            <img src="../assets/images/bg/svg/login.svg" alt="login-bg" width="80%">
-            <h2 class=" mt-5">Jadi Freelancer yang terbaik untuk Pekerjaan apa saja, Online</h2>
-            <p class="">Jutaan orang menggunakan Platform Gawija untuk mewujudkan Impian mereka menjadi kenyataan </p>
-        </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-5 div-form-login">
             <div class="row">
                 <div class="col-12 card-login">
@@ -35,7 +30,7 @@ error_reporting(0);
                                 <img src="../assets/images/icon/logo/gawija logo.svg" alt="logo" width="100%">
                             </div>
                         </center>
-                        <h3 class="mt-3">Sign In Talent</h3>
+                        <h3 class="mt-3 txt-1-judul">SIGN IN TALENT</h3>
                     </div>
                     <form action="" method="POST">
                         <div class="form-group">
@@ -51,15 +46,20 @@ error_reporting(0);
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Remember Me!</label>
                         </div>
-                        <small><a href="?log=forgot-password">Forgot Password ?</a></small>
+                        <small><a href="?log=forgot-password" class="txt-2-judul">Forgot Password ?</a></small>
                         <button type="submit" class="btn btn-b2 mt-4" name="login">Submit</button>
                     </form>
                     <br>
-                    <small>Don't have <a href="?log=sign-up">Account Talent?</a></small>
+                    <small class="txt-2-judul">Don't have <a href="?log=sign-up" class="txt-1-judul">Account Talent?</a></small>
                     <br>
-                    <small>Login as <a href="../client">Client</a></small>
+                    <small class="txt-2-judul">logged in as <a href="../client" class="txt-1-judul">a client</a></small>
                 </div>
             </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-7 img-login text-center">
+            <img src="../assets/images/bg/svg/login.svg" alt="login-bg" width="80%">
+            <h2 class=" mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+            <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, quisquam, dolorum quibusdam blanditiis doloribus nobis natus quia esse quos, at ipsam? Aliquid adipisci qui voluptas natus incidunt obcaecati quos autem distinctio commodi.</p>
         </div>
     </div>
 </div>

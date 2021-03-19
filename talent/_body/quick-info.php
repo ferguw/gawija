@@ -11,7 +11,7 @@
  </div>
  <!-- Info -->
  <!-- History -->
- <div class="row d-history">
+ <!-- <div class="row d-history">
      <div class="col-lg-12 card-history">
          <h6>History</h6>
          <ul>
@@ -20,7 +20,7 @@
              <li>List Nama Project</li>
          </ul>
      </div>
- </div>
+ </div> -->
  <!-- History -->
  <div class="row jarak-bottom-menu">
      <div class="col-12">&nbsp;</div>
